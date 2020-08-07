@@ -1,0 +1,69 @@
+
+	<!-- 导航栏 -->
+	<daohang isBack="true" backColor="#87CEFA">
+		<view slot="center" class="daohangTitle">
+			{{name}}
+		</view>
+	</daohang>
+	<!-- input -->
+	<view class="inputView">
+		<view class="input1">
+			<text class="iconfont icon41 sousuoIcon"></text>
+			<input type="text" placeholder="搜索目的地，关键词" class="sousuoInput" bindinput="inputChange"/>
+		</view>
+	</view>
+	<!-- first -->
+	<!-- <view class="first">
+		<view class="firstTitle">
+			今日热门
+		</view>
+		<view class="between">
+			<view>
+				每日为您推荐5款热门活动
+			</view>
+			<view class="betweenRight">
+				{{swiperIndex}}/{{swiper.length}}
+			</view>
+		</view>
+	</view> -->
+	<!-- swiper -->
+	<!-- <swiper class="swiper" bindchange="swiperChange">
+		<swiper-item wx:for="{{swiper}}" wx:key="index">
+			<image src="{{item.img}}" class="swiperImg"></image>
+			<view class="swiperText">
+				{{item.text}}
+			</view>
+		</swiper-item>
+	</swiper> -->
+	<!-- 更多精选活动 -->
+	<view class="more">
+		<view class="morenone" wx:if="{{morelen==0}}">
+			<noproduct name="product"></noproduct>
+		</view>
+		<view class="moreTitle" wx:if="{{morelen!=0}}">
+			{{name}}
+		</view>
+		<view class="moreView">
+			<view class="moreItem" wx:for="{{more}}" wx:key="index" bindtap="changeUrl" data-url="../product_detail/product_detail?id={{item.id}}">
+				<view class="moreView1">
+					<image src="{{item.img}}" class="moreImg"></image>
+				</view>
+				<view class="moreView2">
+					<view class="moreText1">
+						{{item.title}}
+					</view>
+					<view class="moreText2">
+						<text class="morePrice">{{item.priceArea}}</text>
+					</view>
+					<view class="moreItemBottom">
+						<view class="through">
+							<text style="font-size: 24rpx;"></text>{{item.oldPriceArea}}
+						</view>
+						<view>
+							{{item.sales}}人购买
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>

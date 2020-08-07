@@ -1,0 +1,32 @@
+@import "../../static/css/icon.wxss";
+
+/* z-index: 100; */
+.daohang{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+.leftJiantou{
+	width: 80rpx;
+	height: 50px;
+	line-height: 50px;
+	font-size: 36rpx;
+	position: absolute;
+	left: 30rpx;
+}
+.left{
+	position: absolute;
+	left: 80rpx;
+}
+.center{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.zhanwei{
+	width: 100%;
+}

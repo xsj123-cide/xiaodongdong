@@ -1,0 +1,182 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			悦动行活动报名
+		</view>
+	</daohang>
+	<!-- first -->
+	<view class="first">
+		<image src="{{first.img}}" class="firstImg"></image>
+		<view class="firstRight">
+			<view class="firstText1">
+				{{huodongName}} 
+			</view>
+			<view class="firstText2">
+				<view>
+					活动时间：<text class="firstText3">{{fhuodongTime}}</text>
+				</view>
+				<view>
+					集合地点：<text class="firstText3">{{joinAddr}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+		<view class="outTime">
+		<view class="title">
+			出行时间
+		</view>
+		<view class="timeView">
+			<view class="timeItem {{timeIndex==index?'active':''}}" wx:for="{{time}}" wx:key="index" data-number="{{index}}" bindtap="timeChange"
+			wx:if="{{index<3}}">
+				<view>
+					{{item.time}}
+				</view>
+				<view class="timeText1">
+					剩余：{{item.number}}份
+				</view>
+			</view>
+			<view class="timeItem {{timeIndex==3?'active':''}}" data-number="3" bindtap="timeChange">
+				<view>
+					{{time[3].time}}
+				</view>
+				<view class="timeText1" wx:if="{{time[3].number}}">
+					剩余：{{time[3].number}}份
+				</view>
+			</view>
+		</view>
+		<!-- <view class="title1">
+			到达时间
+		</view>
+		<view class="timeText2">
+			{{arriveTime}} 
+		</view> -->
+	</view>
+	<!-- second -->
+	<view class="second">
+		<view class="title">
+			活动套餐：
+		</view>
+		<view>
+			<view class="secondItem" wx:for="{{second}}" wx:key="index">
+				<view>
+					<view>
+						{{item.name}}
+					</view>
+					<view class="secondText1">
+						单价：<text class="red">{{item.priceName}}</text>
+					</view>
+				</view>
+				<view class="secondRight">
+					<view class="secondAdd {{item.number==0? 'gray':''}}" data-type="reduce" data-index="{{index}}"  bindtap="{{item.number==0? 'changeNumber_a':'changeNumber'}}">
+						-
+					</view>
+					<view class="secondContent">
+						{{item.number}}
+					</view>
+					<view class="secondAdd" data-type="add" data-index="{{index}}" bindtap="changeNumber">
+						+
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="secondText2">
+			查看更多套餐<text class="iconfont iconiconfontarrows secondIcon"></text>
+		</view> -->
+	</view>
+	<!-- third -->
+	<view class="third">
+		<view class="title">
+			联系人信息
+		</view>
+		<view>
+			<view class="thirdItem" wx:for="{{userInfos}}" wx:key="index">
+				<view>
+					{{item.name}}<text class="red" wx:if="{{item.val}}">*</text>
+				</view>
+				<input type="text"  value="{{item.value}}" bindblur="checkindex"
+				data-name='{{item.name}}' class="thirdInput" placeholder="请填写{{item.name}}"  />
+			</view>
+			<!-- <view class="thirdItem">
+				<view>
+					手机号码：<text class="red">*</text>
+				</view>
+				<input type="text" class="thirdInput" placeholder="用于接收活动通知" />
+			</view>
+			<view class="thirdItem">
+				<view>
+					家长身份证号：<text class="red">*</text>
+				</view>
+				<input type="text" class="thirdInput" placeholder="将用于购买保险请认真填写" />
+			</view>
+			<view class="thirdItem">
+				<view>
+					孩子姓名：<text class="red">*</text>
+				</view>
+				<input type="text" class="thirdInput" placeholder="请填写最新户籍名字" />
+			</view>
+			<view class="thirdItem">
+				<view>
+					孩子身份证号：<text class="red">*</text>
+				</view>
+				<input type="text" class="thirdInput" placeholder="将用于购买保险请认真填写" />
+			</view> -->
+		</view>
+	</view>
+		<!-- 时间选择 -->
+	<view class="time" wx:if="{{isTime}}">
+		<view class="timeTile">
+			选择日期
+		</view>
+		<view class="timeMonth">
+			<view class="timeItem1 {{monthIndex==index?'monthActive':''}}" wx:for="{{month}}" wx:key="index" data-index="{{index}}"
+			bindtap="changeMonth">
+				{{item}}月
+			</view>
+		</view>
+		<view class="timeWeek">
+			<view class="weekItem" wx:for="{{weeka}}" wx:key="index">
+				{{item}}
+			</view>
+		</view>
+		<view class="timeDay">
+			<view class="timeDayItem" wx:for="{{timeArray}}" wx:key="index" wx:if="{{item==''}}">
+				{{item}}
+			</view>
+			<view class="timeDayItem {{dayIndex==index?'dayActive':''}} {{monthIndex!=0||nowdate<item?'':'gray'}}" wx:for="{{timeArray}}" wx:key="index" data-day="{{item}}" data-index="{{index}}" bindtap="{{monthIndex!=0||nowdate<item?'switchDay':''}}"
+			wx:if="{{item!=''}}">
+				<view class="day">
+					{{item}}
+				</view>
+				<view class="shengyu" wx-if="{{dayIndex==index}}">
+					200份
+				</view>
+			</view>
+		</view>
+		<view class="dayButton" bindtap="closeTime">
+			确认
+		</view>
+	</view>
+	<!-- 备注 -->
+	<view class="beizhu">
+		<view class="beizhutitle">
+			备注：
+		</view>
+		<input type="text" class="beizhuInput" placeholder=" 特殊备注信息" bindblur="checkbei"/>
+	</view>
+	<!-- 协议 -->
+	<view class="xieyi">
+	<view class="iconfont iconduigou xieyiIcon">
+	</view>
+	我已经查看并同意“活动须知”和“<text class="blue">服务条款</text>”
+	</view>
+	<!-- 底部 -->
+	<view class="bottom">
+	</view>
+	<view class="bottom1">
+		<view class="bottomLeft">
+			总费用:<text class="red">￥{{totalmoney}}</text>
+		</view>
+		<view class="bottomRight" bindtap="baoming1">
+			确认报名
+		</view>
+	</view>

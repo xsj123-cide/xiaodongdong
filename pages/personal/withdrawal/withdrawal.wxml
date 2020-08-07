@@ -1,0 +1,29 @@
+
+	<daohang isBack="true">
+		<view slot="center" class="daohangTitle">
+			提现
+		</view>
+	</daohang>
+	<!-- back -->
+	<view class="back">
+		<view class="backText1">
+			累计供应款
+		</view>
+		<view class="backText2">
+			￥214124.00
+		</view>
+	</view>
+	<view class="itemView">
+		<view class="item" wx:for="{{array}}" wx:key="index" bindtap="tixian1" data-index="{{index}}">
+			<view>
+				{{item.title}}
+			</view>
+			<view class="marginTop {{index==0?'red':''}}">
+				￥{{item.price}}
+			</view>
+		</view>
+	</view>
+	<!-- button -->
+	<view class="button" bindtap="withdrawal">
+		立即提现
+	</view>

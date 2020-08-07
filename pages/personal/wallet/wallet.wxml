@@ -1,0 +1,63 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				我的钱包
+			</view>
+		</daohang>
+		
+		<!-- first -->
+		<view class="first">
+			<view class="flex">
+				<view class="flexItem borderRight">
+					<view>
+						0
+					</view>
+					<view class="itemText">
+						可提现
+					</view>
+				</view>
+				<view class="flexItem borderRight">
+					<view>
+						0
+					</view>
+					<view class="itemText">
+						提现中
+					</view>
+				</view>
+				<view class="flexItem">
+					<view>
+						0
+					</view>
+					<view class="itemText">
+						已提现
+					</view>
+				</view>
+			</view>
+			
+			<view class="firstButton" bindtap="tixian1">
+				提现
+			</view>
+		</view>
+		<!-- second -->
+		<view>
+			<view class="secondItem" bindtap="withdrawal1">
+				提现记录
+				<view class="secondRight">
+					<view class="iconfont iconyoujiantou1 secondIcon1">
+					</view>
+				</view>
+			</view>
+			<view class="secondItem">
+				提现方式
+				<view class="secondRight">
+					<image src="../../../static/img/shouye/weixin.png" class="weixinImg"></image>
+					微信提现
+				</view>
+			</view>
+			<view class="secondBottom">
+				<text class="iconfont iconwenhao"></text>
+				规则说明
+			</view>
+		</view>
+	</view>

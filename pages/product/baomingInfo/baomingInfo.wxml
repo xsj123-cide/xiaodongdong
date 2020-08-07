@@ -1,0 +1,145 @@
+	
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view slot="center" class="daohangTitle">
+				报名信息
+			</view>
+		</daohang>
+			<!-- content -->
+			<!-- <view class="title">
+				<text bindtap="shaixuan1">
+					<text class="iconfont iconshaixuan titleIcon"></text>
+					<text >可筛选</text>
+				</text>
+			</view> -->
+			<view class="itemView">
+				<view class="item1">
+					头像
+				</view>
+				<view class="item3">
+					昵称
+				</view>
+				<view class="item3">
+					套餐
+					<!-- <text class="iconfont iconxiangxia2"></text> -->
+				</view>
+				<view class="item1">
+					数量
+				</view>
+				<!-- <view class="item2">
+					参与状态<text class="iconfont iconxiangxia2"></text>
+				</view>
+				<view class="item1" >
+					电话
+				</view> -->
+			</view>
+			<view class="itemView" wx:for="{{array1}}" wx:key="index">
+				<view class="item1">
+					<image src="{{item.headPhotoPath}}" class="itemTouxiang"></image>
+				</view>
+				<view class="item3">
+					{{item.nickName}}
+				</view>
+				<view class="item3">
+					{{item.tcName}}套餐
+					<!-- A套餐  -->
+				</view>
+				<view class="item1">
+					{{item.buyNum}}
+				</view>
+				<!-- <view class="item2 green" wx:if="{{item.isBaoming}}">
+					已报名
+				</view>
+				<view class="item2 red" wx:if="{{!item.isBaoming}}">
+					未报名
+				</view>
+				<view class="item1" bindtap='callGetPhone' data-getPhone='{{callGetPhone}}'>
+					<view class="phone iconfont icondianhua1">
+					</view>
+				</view> -->
+			</view>
+			<!-- bottom -->
+			<view class="bottom">
+				没有更多了喲~
+			</view>
+			<!-- 遮罩 -->
+			<!-- <view class="zhezhao" wx:if="{{isZhezhao}}">
+			</view>
+			<view class="taocan" wx:if="{{isZhezhao}}">
+				<view class="taocanTitle" bindtap="save1">
+					确认
+				</view>
+				<view class="flex">
+					<view class="bottomLeft">
+						<view class="bottomItem">
+							套餐
+						</view>
+						<view class="bottomItem {{taocanIndex==-1?'active':''}}" data-index="{{-1}}" bindtap="taocan1">
+							全部
+						</view>
+						<view class="bottomItem {{index==taocanIndex?'active':''}}" wx:for="{{taocan}}" wx:key="index" data-index="{{index}}" bindtap="taocan1">
+							{{item}}套餐
+						</view>
+					</view>
+					<view class="bottomLeft">
+						<view class="bottomItem">
+							参与状态
+						</view>
+						<view class="bottomItem {{state1Index==-1?'active':''}}" data-index="{{-1}}" bindtap="state1">
+							全部
+						</view>
+						<view class="bottomItem {{state1Index==0?'active':''}}" data-index="{{0}}" bindtap="state1">
+							已报名
+						</view>
+						<view class="bottomItem {{state1Index==1?'active':''}}" data-index="{{1}}" bindtap="state1">
+							未报名
+						</view>
+					</view>
+				</view>
+			</view> -->
+			<!-- bottom -->
+			<view class="bottom1">
+				<!-- <view class="iconfont iconshouye bottomIcon">
+				</view>
+				<view class="bottomText" bindtap="changeUrla" data-url="../../../pages/index/index">
+					首页
+				</view>
+				<view class="iconfont icondingdan bottomIcon">
+				</view>
+				<view class="bottomText1">
+					售前咨询
+				</view> -->
+				<view wx:for="{{menus}}" wx:key="index" class="flex" style="margin-right: 35rpx;" bindtap="changeUrla" data-url="{{item.url}}">
+				<!-- <text class="iconfont iconshouye fixedIcon"></text> -->
+				<image src="{{item.img}}" class="iconfont fixedIcon"></image>
+				<text class="fixedText">{{item.name}}</text>
+				<button wx:if="{{item.url=='gotoKefu'}}" class="kefuButton" size="mini" open-type="contact">客服</button>
+			</view>
+
+
+				<view class="bottomButton">
+					分享给好友
+					<button  class="fenxButton" size="mini" data-type="haibao" bindtap="zhezhao1">分享给好友</button>
+				</view>
+				<view class="bottomButton" bindtap="goBack">
+					立即报名
+				</view>
+			</view>
+			<!-- 遮罩 -->
+			<view class="zhezhao" wx:if="{{isZhezhaoa}}" bindtap="cancelZhezhao"></view>
+			<view class="haibao" wx:if="{{isHaibao}}">
+				<view class="haibaoTop">
+					{{zhezhaoText}}
+				</view>
+				<view class="flex">
+					<view class="haibaoButton" data-type="{{false}}" bindtap="haibao1">
+						复制文本
+						<!-- <button  class="fenxButton" size="mini" open-type="share">分享给好友</button> -->
+					</view>
+					<view class="haibaoButton rightButton" data-type="{{true}}" bindtap="haibao1">
+						保存海报
+					</view>
+				</view>
+			</view>
+
+	</view>

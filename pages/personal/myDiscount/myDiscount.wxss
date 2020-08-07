@@ -1,0 +1,175 @@
+
+	.title{
+		width: 100%;
+		height: 80rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	.titleItem{
+		width: 50%;
+		height: 80rpx;
+		line-height: 80rpx;
+		font-size: 28rpx;
+		text-align: center;
+		position: relative;
+	}
+	.borderRight{
+		/* border-right: 1px solid #DCDCDC; */
+	}
+	.borderRight::before{
+		content: "";
+		height: 40rpx;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		border: 1px solid #DCDCDC;
+	}
+	.active{
+	}
+	.active::after{
+		content: "";
+		width: 50rpx;
+		border: 2rpx solid #72C7FF;
+		position: absolute;
+		bottom: 5rpx;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.content{
+		padding:0 30rpx;
+		margin-top: 30rpx;
+		height: 100vh;
+		position: relative;
+	}
+	.item{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-top: 20rpx;
+	}
+	.itembuttoncon {
+		position: fixed;
+		padding:0 30rpx;
+		width: 100%;
+		bottom: 40rpx;
+	}
+	.itembutton{
+		height: 80rpx;
+		background-color: #71C7FF;
+		color: white;
+		border-radius: 30rpx;
+		width: 100%;
+		padding:20rpx;
+		text-align: center;
+	}
+	.itemLeft{
+		width: 28%;
+		height: 200rpx;
+		position: relative;
+		background: #72C7FF;
+		
+		padding-top: 40rpx;
+		font-size: 42rpx;
+		text-align: center;
+		color: white;
+	}
+	.itemLeft:before{
+	  content: '';
+	  display: block;
+	  width: 30rpx;
+	  height: 100%;
+	  background-size: 30rpx 30rpx;
+	  background-repeat: repeat-y;
+	  background-image: radial-gradient(#fff 8rpx, transparent 8rpx);
+	  position: absolute;
+	  top: 0;
+	}
+	.itemLeft:before {
+	  left: -15rpx; /* 半圆，只显示一个repeat的一半 */
+	}
+	.price{
+		font-size: 52rpx;
+	}
+	.leftText1{
+		font-size: 28rpx;
+		margin-top: 20rpx;
+	}
+	.itemRight{
+		width:72%;
+		height:200rpx;
+		background:rgba(255,255,255,1);
+		border-radius:0rpx 8rpx 8rpx 0rpx;
+		border: 1px solid #F5F5F5;
+		padding: 30rpx 15rpx;
+		font-size: 32rpx;
+		position: relative;
+	}
+	.rightView{
+		width:240rpx;
+		height:8rpx;
+		background:rgba(215,215,215,1);
+		border-radius:4rpx;
+	}
+	.rightBlue{
+		width:25%;
+		height:8rpx;
+		background:#71C7FF;
+		border-radius:4rpx;
+	}
+	.rightText{
+		font-size: 20rpx;
+		text-align: right;
+		color: #6F6F6F;
+		margin-top: 5rpx;
+	}
+	.blue{
+		color: #71C7FF;
+	}
+	.itemButton{
+		width:138rpx;
+		height:48rpx;
+		line-height: 48rpx;
+		text-align: center;
+		border:1px solid rgba(45,161,223,1);
+		border-radius:24rpx;
+		position: absolute;
+		right: 0;
+		bottom: 40rpx;
+		font-size: 24rpx;
+		color: #2DA1DF;
+		top: 80rpx;
+	}
+	.itemButtona{
+		width:138rpx;
+		height:48rpx;
+		text-align: center;
+		position: absolute;
+		right: 0;
+		bottom: 40rpx;
+		font-size: 24rpx;
+		color: #2DA1DF;
+		top: 80rpx;
+	}
+	.grey{
+		color: #999999;
+		border: 1px solid #999999;
+	}
+	.itemText{
+		width: 200rpx;
+		height: 50rpx;
+		font-size: 22rpx;
+		color: #6F6F6F;
+		margin-top: 5rpx;
+	}
+	.itemTime{
+		font-size: 22rpx;
+		color: #6F6F6F;
+	}
+	.backGrey{
+		background-color: #999999;
+	}

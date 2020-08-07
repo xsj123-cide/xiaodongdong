@@ -1,0 +1,79 @@
+
+	<!-- 导航栏 -->
+	<daohang isBack="true">
+	</daohang>
+	<!-- content -->
+	<view class="first">
+		<view class="firstItem">
+			<view class="firstNumber borderRight {{index==0?'active':''}}">
+				1
+			</view>
+			<view>
+				填写信息
+			</view>
+		</view>
+		<view class="firstItem">
+			<view class="firstNumber borderRight">
+				2
+			</view>
+			<view>
+				提交申请
+			</view>
+		</view>
+		<view class="firstItem">
+			<view class="firstNumber">
+				3
+			</view>
+			<view>
+				完成
+			</view>
+		</view>
+	</view>
+	<!-- second -->
+	<view>
+		<view class="title">
+			合作意向信息
+		</view>
+		<view class="inputView">
+			<view class="inputItem borderBottom">
+				<view class="inputText">
+					姓名
+				</view>
+				<input type="text" class="input1" bindinput="name1"/>
+			</view>
+			<view class="inputItem borderBottom">
+				<view class="inputText">
+					手机号
+				</view>
+				<input type="text" class="input1" bindinput="phone1"/>
+			</view>
+			<view class="inputItem">
+				<view class="inputText">
+					类型
+				</view>
+				<radio-group class="group" bindchange="radioChange">
+					<view wx:for="{{redioGroup}}" wx:key="index" class="{{index>0?'marginLeft':''}}">
+						<radio value="{{item.value}}" checked wx:if="{{index==0}}"></radio>
+						<radio value="{{item.value}}" wx:if="{{index>0}}"></radio>{{item.name}}
+					</view>
+				</radio-group>
+			</view>
+		</view>
+		<view class="title">
+			合作内容
+		</view>
+		<textarea class="textarea" maxlength="1000" bindinput="textarea1">
+			<view class="number1">
+				{{length}}/1000
+			</view>
+		</textarea>
+	</view>
+	<!-- bottom -->
+	<view class="bottom">
+		<view class="button1" bindtap="tijiao1">
+			提交申请
+		</view>
+		<view class="button2" bindtap="back1">
+			进人首页
+		</view>
+	</view>

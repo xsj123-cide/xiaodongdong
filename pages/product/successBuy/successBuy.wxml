@@ -1,0 +1,26 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			悦动行
+		</view>
+	</daohang>
+	<view class="pay">
+		<view class="iconfont iconqunfengzhifuchenggong payIcon"></view>
+		<view class="payView">
+			支付成功,商家15分钟内进行确定
+		</view>
+		<view class="payView1">
+			<text>订单号：{{dingdan}}</text>
+			<text class="marginLeft30">订单金额：￥{{price}}</text>
+		</view>
+		<view class="payBottom">
+			<view class="payButton" bindtap="changeUrla" data-url="../../index/index">
+				回到首页
+			</view>
+			<view class="payButton" bindtap="changeUrl" data-url="../../personal/orderDetail/orderDetail?id={{dingdan}}">
+				查看订单详情
+			</view>
+		</view>
+	</view>
+	<!-- 精选 -->
+	<jingxuan shuju="{{more}}"></jingxuan>

@@ -1,0 +1,369 @@
+.ze{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: transparent;
+	z-index: 500;			
+}
+	.first{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+		font-size: 26rpx;
+		
+		padding: 30rpx;
+		padding-right: 0;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.firstImg{
+		width:170rpx;
+		height: 170rpx;
+		margin-right: 15rpx;
+	}
+	.firstRight{
+		width: 520rpx;
+	}
+	.firstText1{
+		color: #299DFF;
+		line-height: 38rpx;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	.firstText2{
+		color: #999999;
+		line-height: 36rpx;
+		margin-top: 15rpx;
+	}
+	.firstText3{
+		font-size: 22rpx;
+	}
+	.second{
+		padding: 20rpx 30rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.title{
+		font-size: 30rpx;
+		font-weight: bold;
+		margin-bottom: 10rpx;
+	}
+	.secondItem{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		
+		width: 100%;
+		font-size: 26rpx;
+		padding-bottom: 15rpx;
+		margin-top: 15rpx;
+		border-bottom: 1px solid #F5F5F5;
+	}
+	.secondText1{
+		font-size: 22rpx;
+		margin-top: 10rpx;
+	}
+	.red{
+		color: red;
+	}
+	.secondRight{
+		display: flex;
+		flex-direction: row;
+		
+		position: absolute;
+		right: 15rpx;
+	}
+	.secondAdd{
+		width: 50rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		text-align: center;
+		font-size: 42rpx;
+		font-weight: bold;
+		color: white;
+		background-color: #71C7FF;
+	}
+	.secondContent{
+		width: 70rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		text-align: center;
+		border-top: 1px solid #DCDCDC;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	.secondText2{
+		font-size: 26rpx;
+		color: #71C7FF;
+		text-align: center;
+		margin-top: 15rpx;
+	}
+	.secondIcon{
+		margin-left: 15rpx;
+	}
+	.third{
+		padding: 20rpx 30rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.thirdItem{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 26rpx;
+		/* padding-bottom: 15rpx; */
+		margin-top: 10rpx;
+		border-bottom:1px solid #F5F5F5;
+		padding: 20rpx 0rpx;
+
+	}
+	.thirdItem_name {
+		font-weight: 600;
+	}
+	.thirdInput{
+		width: 420rpx;
+		padding: 0 10rpx;
+		font-size: 26rpx;
+		color: #999999;
+		margin-left: 15rpx;
+	}
+	.beizhu{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 20rpx 30rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.beizhutitle{
+		font-size: 30rpx;
+		font-weight: bold;
+	}
+	.beizhuInput{
+		width: 550rpx;
+		margin-left: 10rpx;
+		color: #999999;
+		font-size: 26rpx;
+	}
+	.xieyi{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 26rpx;
+		padding: 20rpx 30rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.xieyiIcon{
+		width: 50rpx;
+		height: 50rpx;
+		line-height: 50rpx;
+		text-align: center;
+		border-radius: 100%;
+		margin-right: 15rpx;
+		color: white;
+		background-color: #00FF7F;
+	}
+	.blue{
+		color: #299DFF;
+	}
+	.bottom{
+		width: 100%;
+		height: 100rpx;
+	}
+	/* z-index: 100; */
+	.bottom1{
+		width: 100%;
+		height: 100rpx;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		background-color: white;
+		font-size: 30rpx;
+		
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		z-index: 100;
+	}
+	.bottomLeft{
+		width: 60%;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+	}
+	.bottomRight{
+		width: 40%;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		color: white;
+		background-color: #71C7FF;
+	}
+
+	
+	.outTime{
+		padding: 15rpx 30rpx;
+		padding-right: 0;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.title{
+		font-size: 30rpx;
+		font-weight: bold;
+		margin-bottom: 20rpx;
+	}
+	.timeView{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 20rpx;
+	}
+	.timeItem{
+		width:175rpx;
+		height:88rpx;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		
+		font-size: 22rpx;
+		background:#F5F5F5;
+		border-radius:5rpx;
+		margin-right: 15rpx;
+	}
+	.active{
+		box-shadow:0rpx 0rpx 10rpx 0rpx rgba(73,184,255,0.42);
+		border: 1px solid #299DFF;
+	}
+	.timeText1{
+		margin-top: 5rpx;
+	}
+	.title1{
+		font-size: 30rpx;
+		font-weight: bold;
+		margin-bottom: 10rpx;
+	}
+	.timeText2{
+		font-size: 24rpx;
+		color: #999999;
+	}
+		/* z-index: 102; */
+		.time{
+			width: 100%;
+			height: 1012rpx;
+			padding: 20rpx 0;
+			background-color: white;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: 999;
+			border-top: 1px solid #F5F5F5;
+		}
+		.timeTile{
+			padding: 0 30rpx;
+			font-size: 30rpx;
+			margin-bottom: 15rpx;
+		}
+		.timeMonth{
+			padding: 0 30rpx;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		.timeItem1{
+			font-size: 28rpx;
+			font-weight: bold;
+			letter-spacing: 2px;
+			padding-bottom: 20rpx;
+			margin-right: 50rpx;
+			position: relative;
+		}
+		.monthActive{
+		}
+		.monthActive::after{
+			content: "";
+			width: 30rpx;
+			border: 1px solid #71C7FF;
+			position: absolute;
+			bottom: 5rpx;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.timeWeek{
+			width: 100%;
+			height: 50rpx;
+			display: flex;
+			flex-direction: row;
+			background-color: #F3F3F3;
+		}
+		.weekItem{
+			width: 14.2%;
+			text-align: center;
+			height: 50rpx;
+			line-height: 50rpx;
+			font-size: 26rpx;
+		}
+		.timeDay{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.timeDayItem{
+			width: 14.2%;
+			text-align: center;
+			height: 124rpx;
+			font-size: 26rpx;
+			border: 0.5px solid #ebebeb;
+		}
+		.gray {
+			background-color: #e6e6e6;
+		}
+		.dayActive{
+			background-color: #E0F2FF;
+			border-radius: 15rpx;
+			border: 1px solid #71C7FF;
+		}
+		/* z-index: 101; */
+		.zhezhao{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			background-color: black;
+			top: 0;
+			left: 0;
+			opacity: 0.5;
+			z-index: 101;
+		}
+		.shengyu{
+			font-size: 20rpx;
+			text-align: center;
+			margin-top: 5rpx;
+		}
+		.day{
+			margin-top: 20rpx;
+		}
+		.dayButton{
+			width:150rpx;
+			height:60rpx;
+			line-height: 60rpx;
+			text-align: center;
+			color: white;
+			font-size: 30rpx;
+			background:rgba(113,199,255,1);
+			border-radius:30rpx;
+			position: absolute;
+			right: 30rpx;
+			bottom: 30rpx;
+		}
+		.userRight{
+			font-size: 20rpx;
+			position: absolute;
+			right: 30rpx;
+		}
+		.userRightmoney {
+			font-size: 20rpx;
+			color: rgb(255, 83, 83);
+			position: absolute;
+			right: 70rpx;
+		}

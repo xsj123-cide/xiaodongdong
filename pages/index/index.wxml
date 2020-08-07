@@ -1,0 +1,218 @@
+
+<scroll-view wx:if="{{ifxianshi}}"  scroll-y class="scroll1" bindscroll="scroll1">
+		<!-- 导航栏 -->
+		<daohang isBack="{{false}}" backColor="{{daohangColor}}">
+			<view slot="center" class="daohangTitle">
+				小动动活动助手
+			</view>
+		</daohang>
+		<!-- back -->
+		<view class="back">
+			<image src="../../static/img/shouye/back.png" class="backImg"></image>
+			<!-- 横幅 -->
+			<view class="hengfu"  wx:if="{{isHengfu}}" style="top:{{height+5}}px">
+				点击"
+				<image src="../../static/img/shouye/dian.png" class="hengfuImg"></image>
+				"添加到我的小程序，下次使用更方便哟~<text class="cancelHengfu" bindtap="cancelHengfu">X</text>
+			</view>
+			<!-- first -->
+			<view class="first" style="top:{{height+38}}px">
+				<view class="flex" bindtap="chooseCity">
+					<view class="city1">
+						{{city1}}
+					</view>
+					<view class="iconfont iconxiangxia2 firstIcon1">
+					</view>
+				</view>
+				<view class="sousou" bindtap="sousuo1">
+					<text class="iconfont icon41"></text>
+					<text class="sousuoText">搜索目的地</text>
+				</view>
+				<view class="iconfont">
+				</view>
+				<!-- <view class="iconfont iconcaidan firstIcon2">
+				</view> -->
+			</view>
+		</view>
+		<!-- 轮播 -->
+		<swiper autoplay style="margin-top:{{height+10}}px" class="swiper" indicator-dots indicator-color="white" indicator-active-color="#87CEFA">
+			<swiper-item wx:for="{{lunbo}}" wx:key="index" bindtap="changeUrl" data-url="{{item.url}}">
+				<image src="{{item.img}}" class="swiperImg"></image>
+			</swiper-item>
+		</swiper>
+		<!-- second -->
+		<view class="second">
+			<view wx:for="{{second}}" wx:key="index" class="secondItem" bindtap="changeUrl" data-url="{{item.url}}">
+				<image src="{{item.img}}" class="secondImg"></image>
+				<view>
+					{{item.name}}
+				</view>
+			</view>
+		</view>
+		<!-- third -->
+		<view class="third">
+			<image src="{{adpic[0].img}}" class="thirdImg1" bindtap="changeUrl" data-url="{{adpic[0].url}}">
+			</image>
+			<view class="thirdRight">
+				<image src="{{adpic[1].img}}" class="thirdImg2" bindtap="changeUrl" data-url="{{adpic[1].url}}">
+				</image>
+				<image src="{{adpic[2].img}}" class="thirdImg2" bindtap="changeUrl" data-url="{{adpic[2].url}}">
+				</image>
+			</view>
+		</view>
+		<!-- 红包 -->
+		<view class="hongbao">
+			<image src="{{hongbaoImg[0].img}}" class="hongbaoImg" bindtap="changeUrl" data-url="{{hongbaoImg[0].url}}" ></image>
+		</view>
+		<!-- 推荐 -->
+		<view class="tuijian">
+			<view class="tuijianTitle">
+				<view class="weight">
+					热门推荐
+				</view>
+				<view class="tuijianTitleRight">
+					<!-- <text>更多</text>
+					<text class="iconfont iconyoujiantou tuijianIcon1"></text> -->
+				</view>
+			</view>
+			<!-- 优选 -->
+			<view class="youxuan" wx:for="{{itema}}" wx:key="index" wx:if="{{item.tehui}}"  bindtap="changeUrl" data-url="../product/product_detail/product_detail?id={{item.id}}" data-endtime="{{item.endBuyDate}}">
+				<view class="youxuanTitle">
+					<view class="youxuanText1">
+						优选好活动
+					</view>
+					<view class="youxuanText2">
+						省的多 玩的嗨
+					</view>
+					<view class="flex" wx:for="{{tehuitime}}"  wx:for-index="index1" wx:key="index1" wx:for-item="item1" wx:if="{{item1.id==item.id}}">
+							<view class="youxuanText2"  style="display:inline-block" wx:if="{{item1.time[0]=='已过期'}}">
+								距离结束：{{item1.time[0]}}天
+							</view> 
+							<view class="youxuanText2"  style="display:inline-block" wx:if="{{item1.time[0]!='已过期'}}">
+								距离结束：{{item1.time[0]}}天
+							</view>
+							<view class="flex" wx:if="{{item1.time[0]!='已过期'}}">
+								<view class="youxuanTime">
+									{{item1.time[1]}}
+								</view>:
+								<view class="youxuanTime">
+									{{item1.time[2]}}
+								</view>:
+								<view class="youxuanTime">
+									{{item1.time[3]}}
+								</view>
+							</view>
+							</view>
+				</view>
+				<view class="youxuanDiv1">
+					<image src="{{item.img}}" class="youxuanDiv1Img"></image>
+					<view class="youxuanDiv1Right">
+						<view class="youxuanRightText1">
+							{{item.title}}
+						</view>
+						<view class="youxuanRightText2">
+							{{item.time}}开奖
+						</view>
+						<view class="youxuanRightText3">
+							<view>
+								价值<text class="youxuanPrice">{{item.priceArea}}</text>
+							</view>
+							<view class="youxuanButton">
+								立即参与
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- item -->
+			<view class="item" wx:for="{{itema}}"  wx:key="index" wx:if="{{item.tehui==false}}" bindtap="changeUrl" data-url="../product/product_detail/product_detail?id={{item.id}}">
+				<image src="{{item.img}}" class="itemImg1"></image>
+				<view class="itemTitle">
+					<view class="itemBorder1">
+						{{item.title}}
+					</view>
+					<view class="itemTitleRight">
+						<view>
+							{{item.city}}
+						</view>
+						<view class="itemBorder2"></view>
+						<view>
+							{{item.juli}}
+						</view>
+					</view>
+				</view>
+				<view class="itemInfo">
+					{{item.text}}
+				</view>
+				<view class="itemDiv1">
+					<view class="itemPrice">
+						{{item.priceArea}}
+					</view>
+					<view class="itemButton">
+						立即预定
+					</view>
+				</view>
+				<view class="flex" style="padding: 0 15rpx;">
+					<view class="bottomText">
+						原价{{item.oldPriceArea}}
+					</view>
+					<view class="bottomText1">
+						{{item.sales}}人购买
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 猜你喜欢 -->
+		<view class="like">
+			<view class="likeTitle">
+				猜你喜欢
+			</view>
+			<view class="likeArray">
+				<view class="likeItem" wx:for="{{like}}" wx:key="index" bindtap="changeUrl" data-url="../product/product_detail/product_detail?id={{item.id}}">
+					<image src="{{item.img}}" class="likeItemImg"></image>
+					<view class="likeItemInfo" style="font-family:PingFang SC;">
+						{{item.title}}
+					</view>
+					<view class="likeItemPrice">
+						{{item.priceArea}}
+					</view>
+					<view class="likeItemBottom">
+						<view>
+							<text class="through">{{item.oldPriceArea}}</text>
+						</view>
+						<view>
+							{{item.sales}}人购买
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 底线 -->
+		<view class="dixian">
+			<view class="dixianLeft"></view>
+			<view>
+				我就是底线
+			</view>
+			<view class="dixianRight"></view>
+		</view>
+		<view class="bottom">
+			<view>
+				{{service}}
+			</view>
+			<view>
+				{{telNo}}
+			</view>
+			<!-- <view class="bottomButton">
+				<view class="iconfont iconzhuanfa bottomIcon">
+				</view>
+				<view>
+					分享
+				</view>
+			</view> -->
+			<!-- <image src="../../static/img/shouye/fenxiang.png" class="bottomImg"></image> -->
+		</view>
+		
+		<!-- <button style="margin: 20rpx auto;" open-type="share" type="primary">
+			分享
+		</button> -->
+</scroll-view>

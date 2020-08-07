@@ -1,0 +1,61 @@
+
+	<daohang isBack="true">
+		<view class="daohangTitle" slot="center">
+			申请退款
+		</view>
+	</daohang>
+	<!-- first -->
+	<view class="first">
+		<view class="iconfont iconrefund firstIcon">
+		</view>
+		<view>
+			<view class="firstText1">
+				{{text1}}
+			</view>
+			<view class="firstText2">
+				已提交申请，商家将在7-10个工作日进行审核
+			</view>
+		</view>
+		<view class="firstButton" bindtap="refund" wx:if="{{!isCanel}}">
+			取消退款
+		</view>
+	</view>
+	<!-- second -->
+	<view class="second">
+		<view class="secondItem" wx:for="{{info}}" wx:key="index">
+			<view class="secondText">
+				{{item.name}}
+			</view>
+			<view class="secondRight">
+				{{item.text}}
+			</view>
+		</view>
+	</view>
+	<!-- third -->
+	<view class="third">
+		<view class="thirdView" wx:for="{{time}}" wx:key="index">
+			<view class="time">
+				<view>
+					{{item.day}}
+				</view>
+				<view class="marginTop">
+					{{item.min}}
+				</view>
+			</view>
+			<view class="thirdItem  {{index==time.length-1?'':'borderLeft'}}">
+				<view>
+					{{item.text1}}
+				</view>
+				<view class="marginTop">
+					{{item.text2}}
+				</view>
+				<view class="thirdIcon iconfont iconziliao {{item.success?'blue':'white'}}"
+				wx:if="{{index==0}}">
+				</view>
+				<view class="thirdIcon iconfont iconduigou1 {{item.success?'blue':'white'}}"
+				wx:if="{{index!=0}}">
+				</view>
+			</view>
+		</view>
+		
+	</view>

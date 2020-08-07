@@ -1,0 +1,42 @@
+	
+	.view{
+		width: 100%;
+		height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.first{
+		text-align: center;
+		margin-top: 20rpx;
+	}
+	.firstImg{
+		width: 85%;
+		height: 200rpx;
+	}
+	.second{
+		padding: 20rpx;
+		padding-left: 15%;
+		font-size: 24rpx;
+		background-color: white;
+		margin-top: 20rpx;
+	}
+	.secondText{
+		margin-top: 15rpx;
+		line-height: 38rpx;
+	}
+	.third{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 50rpx;
+		margin-top: 50rpx;
+	}
+	.thirdButton{
+		width:300rpx;
+		height:70rpx;
+		line-height: 70rpx;
+		text-align: center;
+		color: white;
+		background:rgba(114,200,255,1);
+		border-radius:35rpx;
+		font-size: 26rpx;
+	}

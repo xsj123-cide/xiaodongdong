@@ -1,0 +1,198 @@
+	
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				分销订单
+			</view>
+		</daohang>
+		
+		<swiperTitle array="{{array}}" bind:index="changeIndex" backColor="white" titleIndex="{{titleIndex}}">
+		</swiperTitle>
+		
+		<!-- 全部 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==0}}"
+		 data-index="{{index}}" bindtap="zhedie1">
+			<view class="itemTop">
+				<view class="itemLeft" wx:if="{{item.isDakuan==true}}">
+					<view>
+						已
+					</view>
+					<view>
+						游
+					</view>
+					<view>
+						玩
+					</view>
+				</view>
+				<view class="itemLeft backGrey" wx:if="{{item.isDakuan==false}}">
+					<view>
+						未
+					</view>
+					<view>
+						游
+					</view>
+					<view>
+						玩
+					</view>
+				</view>
+				<view class="itemRight {{item.isZhedie?'borderBottom':''}}">
+					<view>
+						<view class="marginBottom" style="font-size: 24rpx;">
+							订单编号：{{item.dingdan}}
+						</view>
+						<view class="colorGrey marginBottom">
+							下单时间：{{item.time}}
+						</view>
+						<view class="colorGrey">
+							申请时间：{{item.time}}
+						</view>
+					</view>
+					
+					<view class="itemPrice">
+						+{{item.price}}
+					</view>
+					
+					<view class="itemButton iconfont {{item.isZhedie?'iconshangjiantou':'iconiconfontarrows'}}">
+					</view>
+				</view>
+			</view>
+			<view class="itemBottom" wx:if="{{item.isZhedie}}">
+				<image src="../../../static/img/shouye/touxiang1.jpg" class="bottomImg"></image>
+				<view class="marginRight">
+					<view class="marginBottom">
+						微信名：陪你到天明
+					</view>
+					<view>
+						姓名：徐枫
+					</view>
+				</view>
+				<image src="../../../static/img/shouye/touxiang2.jpg" class="bottomImg"></image>
+				<view>
+					<view class="marginBottom">
+						商家名称：链家
+					</view>
+					<view class="colorGrey">
+						数量：1
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		<!-- 已游玩 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==1&&item.isDakuan==true}}"
+		 data-index="{{index}}" bindtap="zhedie1">
+			<view class="itemTop">
+				<view class="itemLeft">
+					<view>
+						已
+					</view>
+					<view>
+						游
+					</view>
+					<view>
+						玩
+					</view>
+				</view>
+				<view class="itemRight {{item.isZhedie?'borderBottom':''}}">
+					<view>
+						<view class="marginBottom" style="font-size: 24rpx;">
+							订单编号：{{item.dingdan}}
+						</view>
+						<view class="colorGrey marginBottom">
+							下单时间：{{item.time}}
+						</view>
+						<view class="colorGrey">
+							申请时间：{{item.time}}
+						</view>
+					</view>
+					
+					<view class="itemPrice">
+						+{{item.price}}
+					</view>
+					
+					<view class="itemButton iconfont {{item.isZhedie?'iconshangjiantou':'iconiconfontarrows'}}">
+					</view>
+				</view>
+			</view>
+			<view class="itemBottom" wx:if="{{item.isZhedie}}">
+				<image src="../../../static/img/shouye/touxiang1.jpg" class="bottomImg"></image>
+				<view class="marginRight">
+					<view class="marginBottom">
+						微信名：陪你到天明
+					</view>
+					<view>
+						姓名：徐枫
+					</view>
+				</view>
+				<image src="../../../static/img/shouye/touxiang2.jpg" class="bottomImg"></image>
+				<view>
+					<view class="marginBottom">
+						商家名称：链家
+					</view>
+					<view class="colorGrey">
+						数量：1
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		<!-- 未游玩 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==2&&item.isDakuan==false}}"
+		 data-index="{{index}}" bindtap="zhedie1">
+			<view class="itemTop">
+				<view class="itemLeft backGrey">
+					<view>
+						未
+					</view>
+					<view>
+						游
+					</view>
+					<view>
+						玩
+					</view>
+				</view>
+				<view class="itemRight {{item.isZhedie?'borderBottom':''}}">
+					<view>
+						<view class="marginBottom" style="font-size: 24rpx;">
+							订单编号：{{item.dingdan}}
+						</view>
+						<view class="colorGrey marginBottom">
+							下单时间：{{item.time}}
+						</view>
+						<view class="colorGrey">
+							申请时间：{{item.time}}
+						</view>
+					</view>
+					
+					<view class="itemPrice">
+						+{{item.price}}
+					</view>
+					
+					<view class="itemButton iconfont {{item.isZhedie?'iconshangjiantou':'iconiconfontarrows'}}">
+					</view>
+				</view>
+			</view>
+			<view class="itemBottom" wx:if="{{item.isZhedie}}">
+				<image src="../../../static/img/shouye/touxiang1.jpg" class="bottomImg"></image>
+				<view class="marginRight">
+					<view class="marginBottom">
+						微信名：陪你到天明
+					</view>
+					<view>
+						姓名：徐枫
+					</view>
+				</view>
+				<image src="../../../static/img/shouye/touxiang2.jpg" class="bottomImg"></image>
+				<view>
+					<view class="marginBottom">
+						商家名称：链家
+					</view>
+					<view class="colorGrey">
+						数量：1
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		
+	</view>

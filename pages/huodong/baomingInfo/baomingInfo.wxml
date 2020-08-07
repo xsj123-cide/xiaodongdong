@@ -1,0 +1,117 @@
+	
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view slot="center" class="daohangTitle">
+				报名信息
+			</view>
+		</daohang>
+			<!-- content -->
+			<view class="title">
+				<text bindtap="shaixuan1">
+					<text class="iconfont iconshaixuan titleIcon"></text>
+					<text >可筛选</text>
+				</text>
+			</view>
+			<view class="itemView">
+				<view class="item1">
+					头像
+				</view>
+				<view class="item3">
+					昵称
+				</view>
+				<view class="item3">
+					套餐<text class="iconfont iconxiangxia2"></text>
+				</view>
+				<view class="item1">
+					数量
+				</view>
+				<view class="item2">
+					参与状态<text class="iconfont iconxiangxia2"></text>
+				</view>
+				<view class="item1">
+					电话
+				</view>
+			</view>
+			<view class="itemView" wx:for="{{array1}}" wx:key="index">
+				<view class="item1">
+					<image src="{{item.img}}" class="itemTouxiang"></image>
+				</view>
+				<view class="item3">
+					{{item.name}}
+				</view>
+				<view class="item3">
+					{{item.taocan}}套餐
+				</view>
+				<view class="item1">
+					{{item.number}}
+				</view>
+				<view class="item2 green" wx:if="{{item.isBaoming}}">
+					已报名
+				</view>
+				<view class="item2 red" wx:if="{{!item.isBaoming}}">
+					未报名
+				</view>
+				<view class="item1">
+					<view class="phone iconfont icondianhua1">
+					</view>
+				</view>
+			</view>
+			<!-- bottom -->
+			<view class="bottom">
+				没有更多了喲~
+			</view>
+			<!-- 遮罩 -->
+			<view class="zhezhao" wx:if="{{isZhezhao}}">
+			</view>
+			<view class="taocan" wx:if="{{isZhezhao}}">
+				<view class="taocanTitle" bindtap="save1">
+					确认
+				</view>
+				<view class="flex">
+					<view class="bottomLeft">
+						<view class="bottomItem">
+							套餐
+						</view>
+						<view class="bottomItem {{taocanIndex==-1?'active':''}}" data-index="{{-1}}" bindtap="taocan1">
+							全部
+						</view>
+						<view class="bottomItem {{index==taocanIndex?'active':''}}" wx:for="{{taocan}}" wx:key="index" data-index="{{index}}" bindtap="taocan1">
+							{{item}}套餐
+						</view>
+					</view>
+					<view class="bottomLeft">
+						<view class="bottomItem">
+							参与状态
+						</view>
+						<view class="bottomItem {{state1Index==-1?'active':''}}" data-index="{{-1}}" bindtap="state1">
+							全部
+						</view>
+						<view class="bottomItem {{state1Index==0?'active':''}}" data-index="{{0}}" bindtap="state1">
+							已报名
+						</view>
+						<view class="bottomItem {{state1Index==1?'active':''}}" data-index="{{1}}" bindtap="state1">
+							未报名
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- bottom -->
+			<view class="bottom1">
+				<view class="iconfont iconshouye bottomIcon">
+				</view>
+				<view class="bottomText">
+					首页
+				</view>
+				<view class="iconfont icondingdan bottomIcon">
+				</view>
+				<view class="bottomText1">
+					售前咨询
+				</view>
+				<view class="bottomButton">
+					分享给好友
+				</view>
+				<view class="bottomButton">
+					立即报名
+				</view>
+			</view>
+	</view>

@@ -1,0 +1,169 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			订单详情
+		</view>
+	</daohang>
+	<!-- title -->
+	<view class="title">
+		<text class="iconfont iconjishi titleIcon"></text>
+		{{info.orderStatusName}}
+	</view>
+	<!-- info -->
+	<view class="info">
+		<view class="infoTitle">
+			活动信息
+		</view>
+		<view class="flex" bindtap="changeUrl" data-url="../../product/product_detail/product_detail?id={{info.productId}}">
+			<image src="{{info.mainPhoto}}" class="infoImg"></image>
+			<view>
+				<view class="infoText1">
+					{{info.remark}}
+				</view>
+				<view class="infoText2">
+					{{info.text2}}<text class="infoNumber">x{{info.buyNum}}</text>
+				</view>
+				<view class="infoText3">
+					总金额：<text class="red">￥{{info.price}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 提示 -->
+	<view class="tishi">
+		<view class="tishiTitle">
+			温馨提醒
+		</view>
+		<view>
+			<view class="tishiText" wx:for="{{tishi}}" wx:key="index">
+				{{index+1}}.{{item}}
+			</view>
+		</view>
+	</view>
+	<!-- 地图 -->
+	<view class="map" >
+		<!-- <image src="{{mapImg}}" class="mapImg"></image> -->
+		<view class="mapImg" >
+		<map bindtap="changeUrl" data-url="../../map/map?addr={{info.addr}}"></map>
+		</view>
+		
+	</view>
+	<!-- 详情 -->
+	<view class="map">
+		<view class="tishiTitle">
+			订单详情
+		</view>
+		<view>
+			<view class="orderItem">
+				<view>
+					订单编号:
+				</view>
+				<view>
+					{{info.orderNo}}
+				</view>
+			</view>
+			<view class="orderItem">
+				<view>
+					下单时间：
+				</view>
+				<view>
+					{{info.createTime}}
+				</view>
+			</view>
+			<view class="orderItem">
+				<view>
+					使用日期：
+				</view>
+				<view>
+					{{info.dueName}}
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 扫码 -->
+	<view class="saoma" wx:if="{{info.orderStatus==20}}">
+		<image src="{{saoma.img}}" class="saomaImg"></image>
+		<view class="saomaText">
+			凭证码：{{saoma.yanzheng}}
+		</view>
+		<view class="saomaText1">
+			核销暗号
+		</view>
+		<input type="text" class="saomaInput" bindinput="inputcode"/>
+		<view class="saomaButton" bindtap="checkcode">
+			确认
+		</view>
+	</view>
+	<!-- 精选 -->
+	<jingxuan shuju="{{moreProducts}}"></jingxuan>
+	<!-- 底部 -->
+	<view class="bottom"></view>
+	<view class="bottom1">
+		<view class="flex"  wx:if="{{info.orderStatus!=10}}">
+			<view class="bottom1Button" wx:if="{{info.orderStatus==20}}" bindtap="orderchu">
+				订单处理
+			</view>
+			<view class="bottom1Button" 	bindtap="changeUrl" 
+			data-url="../../product/product_buy/product_buy?tcId={{info.subProductId}}&id={{info.productId}}">
+				再来一单
+			</view>
+		</view>
+		<view class="flex">
+			<view class="bottom1Button"  wx:if="{{info.orderStatus!=10}}" bindtap="jihe1">
+				集合点照片
+			</view>
+			<view class="bottom1Button" bindtap="continuepay" data-oderNo="{{info.orderNo}}" wx:if="{{info.orderStatus==10}}">
+				继续付款
+			</view>
+			<view class="bottom1Button" bindtap="call1">
+				联系工作人员	
+			</view>
+		</view>
+	</view>
+	<!-- 遮罩 -->
+	<view class="zhezhao" wx:if="{{isZhezhao}}" bindtap="tapZhezhao"></view>
+	<view class="button" wx:if="{{isPhone}}">
+		<view class="buttonTop">
+			<view>
+				联系工作人员
+			</view>
+			<view class="topText1">
+				<text class="iconfont icondianhua1 topIcon"></text>
+				0592-4346324
+			</view>
+		</view>
+		<view class="buttonBottom">
+			<view class="bottomItem" data-type="{{false}}" bindtap="phone1">
+				否
+			</view>
+			<view class="bottomItem right" data-type="{{true}}" bindtap="phone1">
+				拨打
+			</view>
+		</view>
+	</view>
+	<view class="jihe" wx:if="{{isJihe}}">
+		<view class="jiheCancel" bindtap="cancelJihe">
+			X
+		</view>
+		<view class="jiheText">
+			集合地点
+		</view>
+		<image src="../../../static/img/lunbo1.jpg" class="jiheImg"></image>
+		<view class="jiheText1">
+			地点说明
+		</view>
+	</view>
+
+	<view class="tuikuan" wx:if="{{isorderc}}">
+		<view class="jiheCancel" bindtap="cancelorderc">
+			X
+		</view>
+		<view class="bottom2Button">
+				申请改期
+			</view>
+		<view class="bottom2Button">
+				申请退款
+		</view>
+	</view>
+	
+	

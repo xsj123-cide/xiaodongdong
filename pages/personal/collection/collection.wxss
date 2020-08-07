@@ -1,0 +1,49 @@
+
+	.content{
+		margin-top: 20rpx;
+	}
+	.item{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 25rpx 0;
+		position: relative;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	.itemImg{
+		width: 200rpx;
+		height: 180rpx;
+		margin-left: 50rpx;
+		margin-right: 30rpx;
+	}
+	.itemText1{
+		width: 420rpx;
+		font-size: 28rpx;
+		
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	.number{
+		font-size: 28rpx;
+		color: #FF0000;
+		margin-top: 45rpx;
+	}
+	.price{
+		font-size: 26rpx;
+	}
+	.itemButton{
+		width:156rpx;
+		height:58rpx;
+		line-height: 58rpx;
+		text-align: center;
+		font-size: 26rpx;
+		color: white;
+		background:rgba(113,199,255,1);
+		border-radius:30rpx;
+		position: absolute;
+		right: 30rpx;
+		bottom: 20rpx;
+	}

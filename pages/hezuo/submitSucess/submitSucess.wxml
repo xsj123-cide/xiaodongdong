@@ -1,0 +1,28 @@
+
+	<!-- 导航栏 -->
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			提交完成
+		</view>
+	</daohang>
+	<!-- icon -->
+	<view class="iconfont iconqunfengzhifuchenggong icon1"></view>
+	<view class="submitText">
+		提交成功
+	</view>
+	<!-- text -->
+	<view class="view1">
+		<view class="text1">
+			*相关工作人员会在3个工作日联系您
+		</view>
+		<view class="text1">
+			*工作人员联系电话：98762234
+		</view>
+		<view class="view2">
+			<view class="iconfont icondianhua1 icon2"></view>立即联系
+		</view>
+	</view>
+	<!-- button -->
+	<view class="button1" bindtap="back1">
+		返回首页
+	</view>

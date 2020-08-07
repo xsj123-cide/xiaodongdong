@@ -1,0 +1,18 @@
+
+	<daohang isBack="true">
+		<view slot="center" class="daohangTitle">
+			核销成功
+		</view>
+	</daohang>
+	<view class="iconfont iconqunfengzhifuchenggong icon1">
+	</view>
+	<view class="text1">
+		核销成功
+	</view>
+	<!-- button -->
+	<view class="button1" bindtap="continue1">
+		继续核销
+	</view>
+	<view class="button2" bindtap="back1">
+		返回首页
+	</view>

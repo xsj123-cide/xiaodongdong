@@ -1,0 +1,25 @@
+<daohang isBack="true" backColor="white">
+	<view slot="left" class="daohangTitle">
+		联系平台
+	</view>
+</daohang>
+<view class="content">
+  <view class="first">
+  <image class="icon" src="../../../static/img/shouye/zixun.png"></image>
+  <view class="text1">在线咨询</view>
+  <button class="kefuButton" style="width:100%" size="default" open-type="contact">客服</button>
+</view>
+<view class="first" bindtap="calling">
+  <image class="icon" src="../../../static/img/shouye/phone.png"></image>
+  <view class="text2">电话咨询</view>
+</view>
+<view class="first">
+  <image class="icon" src="../../../static/img/shouye/wechat.png"></image>
+  <view class="texta">
+      <view class="text3">微信号</view>
+      <view>
+        <text>微信号：{{telphone}}</text> <text class="copy" bindtap="copy">点击可复制</text>
+      </view>    
+  </view>
+</view>
+</view>

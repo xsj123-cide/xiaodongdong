@@ -1,0 +1,30 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view slot="center" class="daohangTitle">
+				发展分销商
+			</view>
+		</daohang>
+		<!-- img -->
+		<view class="first">
+			<image src="{{firstImg}}" class="firstImg"></image>
+		</view>
+		<!-- second -->
+		<view class="second">
+			<view>
+				操作步骤:
+			</view>
+			<view class="secondText" wx:for="{{caozuo}}" wx:key="index">
+				{{index+1}}.{{item}}
+			</view>
+		</view>
+		<!-- third -->
+		<view class="third">
+			<view class="thirdButton">
+				分享链接，邀请好友
+			</view>
+			<view class="thirdButton">
+				分享海报
+			</view>
+		</view>
+	</view>

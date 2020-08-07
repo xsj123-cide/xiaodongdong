@@ -1,0 +1,62 @@
+	
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view slot="center" class="daohangTitle">
+				我的信息
+			</view>
+		</daohang>
+		
+		<view>
+			<view class="title">
+				个人信息
+			</view>
+			<view class="itemView">
+				<view class="itemItem borderBottom">
+					<view class="itemLeft">
+						姓名
+					</view>
+					<input type="text" class="itemInput" bindinput="trueName" placeholder="请输入姓名" value="{{userinfo.trueName}}"/>
+				</view>
+				<view class="itemItem borderBottom">
+					<view class="itemLeft">
+						手机号码
+					</view>
+					<input type="text" class="itemInput" placeholder="请输入手机号码" bindinput="mobile" value="{{userinfo.mobile}}"/>
+					<button class="getPhone1" size="mini" type="primary" open-type="getPhoneNumber"
+					bindgetphonenumber="getPhoneNumber">
+						获取号码
+					</button>
+					<view class="getPhone2">
+						获取号码
+					</view>
+				</view>
+				<view class="itemItem borderBottom">
+					<view class="itemLeft">
+						身份证号
+					</view>
+					<input type="text" class="itemInput" placeholder="请输入身份证号" value="{{userinfo.cardNo}}" bindinput="Idcard"/>
+				</view>
+				<picker mode="region" bindchange="cityChange">
+					<view class="itemItem borderBottom">
+						<view class="itemLeft">
+							选择城市
+						</view>
+						<input type="text" class="itemInput" disabled value="{{userinfo.provinceName+userinfo.cityName+userinfo.areaName}}"/>
+					</view>
+				</picker>
+				<view class="itemItem">
+					<view class="itemLeft">
+						详细地址
+					</view>
+					<input type="text" class="itemInput" placeholder="请输入详细地址" bindinput="detail_ad"  value="{{userinfo.address}}"/>
+				</view>
+			</view>
+		</view>
+		
+		<view class="button" bindtap="save1">
+			保存
+		</view>
+		<view class="button buttona" bindtap="save1">
+			退出登录
+		</view>
+	</view>

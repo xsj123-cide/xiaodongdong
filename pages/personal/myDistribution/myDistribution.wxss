@@ -1,0 +1,98 @@
+
+	.view{
+		width: 100%;
+		min-height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.sousuo{
+		padding:20rpx 40rpx;
+		background-color: white;
+	}
+	.sousuoInput{
+		width:670rpx;
+		height:50rpx;
+		line-height: 40rpx;
+		color: #999999;
+		background:rgba(153,153,153,0.11);
+		border-radius:25rpx;
+		margin: 0 auto;
+		margin-top: 18rpx;
+		
+		font-size: 22rpx;
+		padding: 5rpx 38rpx;
+	}
+	.sousuoText{
+		font-size: 24rpx;
+		margin-left: 20rpx;
+	}
+	.second{
+		width: 100%;
+		height: 150rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.secondItem{
+		width: 150rpx;
+		height: 50rpx;
+		line-height: 50rpx;
+		text-align: center;
+		font-size: 24rpx;
+		color: #72C8FF;
+		border: 1px solid #72C8FF;
+	}
+	.secondActive{
+		color: white;
+		background-color:#72C8FF;
+	}
+	.border{
+		border-left: 0;
+		border-right: 0;
+	}
+	.third{
+		background-color: white;
+	}
+	.thirdItem{
+		padding: 20rpx 40rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.thirdTitle{
+		font-size: 24rpx;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.blue{
+		color: #72C8FF;
+	}
+	.secondIcon{
+		margin-right: 10rpx;
+	}
+	.table{
+		margin-top: 20rpx;
+		font-size: 24rpx;
+	}
+	.tableTop{
+		padding: 10rpx 0;
+		text-align: center;
+		flex: 1;
+		border: 1px solid #DCDCDC;
+	}
+	.borderLeft{
+		border-left: 0;
+	}
+	.tableBottom{
+		padding: 15rpx 0;
+		text-align: center;
+		flex: 1;
+		border: 1px solid #DCDCDC;
+		border-top: 0;
+		border-right: 0;
+	}
+	.borderRight{
+		border-right: 1px solid #DCDCDC;
+	}
+	.marginTop{
+		margin-top: 7rpx;
+	}

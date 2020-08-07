@@ -1,0 +1,42 @@
+
+	<daohang isBack="true">
+		<view class="daohangTitle" slot="center">
+			领券中心
+		</view>
+	</daohang>
+	
+	<view class="content">
+		<view class="item" wx:for="{{conponList}}" wx:key="index">
+			<view class="itemLeft">
+				<view>
+					￥<text class="price">{{item.quota}}</text>
+				</view>
+				<view class="leftText1">
+					满{{item.astrict}}元使用
+				</view>
+			</view>
+			<view class="itemRight">
+				<view>
+					{{item.range}}
+				</view>
+				<view class="itemText">
+					{{item.title}}
+				</view>
+				<view style="width: 240rpx;">
+					<view class="rightView">
+						<view class="rightBlue" style="width:{{item.percent}}%">
+						</view>
+					</view>
+					<view class="rightText">
+						<text class="blue">{{item.getNum}}</text>/{{item.nums}}
+					</view>
+				</view>
+				<view class="itemButton {{item.isget?'grey':''}}" wx:if="{{!item.isget}}" bindtap="getdicount" data-id="{{item.id}}">
+					立即领取
+				</view>
+				<view class="itemButton grey" wx:if="{{item.isget}}" bindtap="getdicount" data-id="{{item.id}}">
+					已领取
+				</view>
+			</view>
+		</view>
+	</view>

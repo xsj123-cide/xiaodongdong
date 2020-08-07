@@ -1,0 +1,78 @@
+
+	<view class="content">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				申请退款
+			</view>
+		</daohang>
+		<!-- content -->
+		<view>
+			<view>
+				<view class="contentTitle">
+					退款券码（可多选）
+				</view>
+				<view class="contentView">
+					<checkbox-group bindchange="checkChange1">
+					<view class="contentItem" wx:for="{{first}}" wx:key="index">
+						<view>
+							券码：{{item.number}}
+						</view>
+						<!-- <view class="contentYuan iconduigou1 iconfont {{item.isActive?'active1':''}}" 
+						bindtap="chooseFirst" data-index="{{index}}">
+						</view> -->
+						<checkbox value="{{item.value}}"></checkbox>
+					</view>
+					</checkbox-group>
+				</view>
+			</view>
+			<view>
+				<view class="contentTitle">
+					退款金额
+				</view>
+				<view class="contentView">
+					<view class="contentItem">
+						<view>
+							现金
+						</view>
+						<view class="red">
+							24124
+						</view>
+					</view>
+				</view>
+			</view>
+			<view>
+				<view class="contentTitle">
+					退款规则
+				</view>
+				<view class="contentView">
+					<view class="contentItem">
+						<view>
+							未使用可随时退款
+						</view>
+					</view>
+				</view>
+			</view>
+			<view>
+				<view class="contentTitle">
+					退款原因
+				</view>
+				<view class="contentView">
+					<checkbox-group bindchange="checkChange2">
+						<view class="contentItem" wx:for="{{reason}}" wx:key="index">
+							<view>
+								{{item.text}}
+							</view>
+							<!-- <view class="contentYuan iconduigou1 iconfont {{item.isActive?'active1':''}}" 
+							bindtap="chooseReason" data-index="{{index}}">
+							</view> -->
+							<checkbox value="{{item.value}}"></checkbox>
+						</view>
+					</checkbox-group>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- bottom -->
+	<view class="bottom" bindtap="refund1">
+		申请退款
+	</view>

@@ -1,0 +1,61 @@
+.more{
+	padding: 20rpx;
+	background-color: white;
+}
+.moreTitle{
+	color: #999999;
+	font-size: 28rpx;
+	text-align: center;
+	margin-bottom: 10rpx;
+}
+.moreItem{
+	width: 46%;
+	box-shadow:0px 0px 30rpx 0px rgba(0, 0, 0, 0.19);
+	border-radius:5rpx;
+	margin-top: 20rpx;
+}
+.moreView{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.moreView1{
+	width: 100%;
+	height: 180rpx;
+}
+.moreImg{
+	width: 100%;
+	height: 180rpx;
+}
+.moreView2{
+	padding: 15rpx;
+}
+.moreText1{
+	font-size: 24rpx;
+	margin-bottom: 15rpx;
+	
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.moreText2{
+	font-size: 24rpx;
+	color: #FF2626;
+	margin-bottom: 15rpx;
+}
+.morePrice{
+	font-size: 28rpx;
+}
+.moreItemBottom{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 26rpx;
+	color: #999999;
+}
+.through{
+	text-decoration:line-through;
+}

@@ -1,0 +1,92 @@
+
+	
+	<daohang isBack="true">
+		<view class="daohangTitle" slot="center">
+			我的优惠券
+		</view>
+	</daohang>
+	<!-- title -->
+	<view class="title">
+		<view class="titleItem borderRight {{titleIndex==0?'active':''}}" bindtap="changeIndex" data-index="{{0}}">
+			未使用
+		</view>
+		<view class="titleItem {{titleIndex==1?'active':''}}" bindtap="changeIndex" data-index="{{1}}">
+			已使用/已过期
+		</view>
+	</view>
+	<!-- content -->
+	<view wx:if="{{titleIndex==0}}">
+		<view class="content" wx:if="{{conponListlen == 0}}">
+			<noproduct name="discount"></noproduct>
+		</view>
+		<view class="content">
+			<view class="item" wx:for="{{conponList}}" wx:key="index">
+				<view class="itemLeft {{item.color=='gray'? 'backGrey':''}}">
+					<view>
+						￥<text class="price">{{item.quota}}</text>
+					</view>
+					<view class="leftText1">
+						满{{item.astrict}}元使用
+					</view>
+				</view>
+				<view class="itemRight">
+					<view>
+						{{item.range}}
+					</view>
+					<view class="itemText">
+						{{item.title}}
+					</view>
+					<view class="itemTime">
+						{{item.beginTime}}-{{item.endTime}}
+					</view>
+					<view wx:if="{{item.flag != 'yes'}}" class="itemButton"  bindtap="changeUrl" data-url="../../index/index">
+						立即使用
+					</view>
+					<view wx:if="{{item.flag == 'yes'}}" class="itemButtona "> 
+							<icon wx:if="{{!iconif}}" class="icon-small" type="circle" size="23" bindtap="{{item.color=='gray'? '':'chose'}}" data-id="{{item.couponId}}" data-coumoney="{{item.quota}}"></icon>
+							<icon wx:if="{{iconif&&item.couponId==couponIdnow}}" class="icon-small" type="success" size="23" color="#72C7FF" bindtap="chose" data-id="{{item.couponId}}" data-coumoney="{{item.quota}}"></icon>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="itembuttoncon">
+		<view class="itembutton" wx:if="{{totalmoney!=''}}" bindtap="back">
+				确认使用
+		</view>
+		</view>
+	</view>
+	
+	<view  wx:if="{{titleIndex==1}}">
+		<view class="content" wx:if="{{conponListslen == 0}}">
+			<noproduct name="discount"></noproduct>
+	</view>
+	<view class="content">
+		<view class="item" wx:for="{{conponLista}}" wx:key="index">
+			<view class="itemLeft backGrey">
+				<view>
+					￥<text class="price">{{item.quota}}</text>
+				</view>
+				<view class="leftText1">
+					满{{item.astrict}}元使用
+				</view>
+			</view>
+			<view class="itemRight">
+				<view>
+					{{item.range}}
+				</view>
+				<view class="itemText">
+					{{item.title}}
+				</view>
+				<view class="itemTime">
+					{{item.beginTime}}~{{item.endTime}}
+				</view>
+				<view class="itemButton grey" wx:if="{{item.status==1}}">
+					已过期
+				</view>
+				<view class="itemButton grey" wx:if="{{item.past==1&&item.status==0}}">
+					已使用
+				</view>
+			</view>
+		</view>
+	</view>
+	</view>

@@ -1,0 +1,15 @@
+<view class="body">
+<view wx:if="{{name =='order'}}">
+  <image  src="../../static/img/order.png"></image>
+  <view class="texta">您还没有相关订单</view>
+</view>
+<view wx:if="{{name =='discount'}}">
+  <image  src="../../static/img/shouye/dicount.png"></image>
+  <view class="texta">没有优惠券相关信息，快去领券吧~</view>
+</view>
+<view wx:if="{{name =='product'}}">
+  <image  src="../../static/img/shouye/message.png"></image>
+  <view class="texta">暂时没有相关信息~</view>
+</view>
+<!-- <view class="textb">可以去看看有哪些想买的</view> -->
+</view>

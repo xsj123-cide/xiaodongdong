@@ -1,0 +1,106 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				我的分销商
+			</view>
+		</daohang>
+		
+		<!-- sousuo -->
+		<view class="sousuo">
+			<view class="sousuoInput">
+				<text class="iconfont icon41"></text>
+				<text class="sousuoText">搜索</text>
+			</view>
+		</view>
+		<!-- second -->
+		<view class="second">
+			<view class="flex">
+				<view class="secondItem {{secondIndex==0?'secondActive':''}}" data-index="{{0}}" bindtap="changeIndex">
+					本月
+				</view>
+				<view class="secondItem border {{secondIndex==1?'secondActive':''}}" data-index="{{1}}" bindtap="changeIndex">
+					上月
+				</view>
+				<view class="secondItem {{secondIndex==2?'secondActive':''}}" data-index="{{2}}" bindtap="changeIndex">
+					全部
+				</view>
+			</view>
+		</view>
+		<!-- third -->
+		<!-- 本月 -->
+		<view class="third" wx:if="{{secondIndex==0}}">
+			<view class="thirdItem" wx:for="{{array}}" wx:key="index">
+				<view class="thirdTitle">
+					<view>
+						{{item.phone}}
+					</view>
+					<view class="blue">
+						<text class="iconfont iconziliao secondIcon"></text>
+						<text>{{item.number}}单</text>
+					</view>
+				</view>
+				<!-- table -->
+				<view class="table">
+					<view class="flex">
+						<view class="tableTop">
+							本月
+						</view>
+						<view class="tableTop borderLeft">
+							总计
+						</view>
+					</view>
+					<view class="flex">
+						<view class="tableBottom {{index1==item.price.length-1?'borderRight':''}}" wx:for="{{item.price}}" wx:for-item="item1"
+						wx:for-index="index1" wx:key="index1">
+							<view>
+								￥{{item1}}
+							</view>
+							<view class="marginTop">
+								销售
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		<!-- 上月 -->
+		<view class="third" wx:if="{{secondIndex==1}}">
+			<view class="thirdItem" wx:for="{{array}}" wx:key="index">
+				<view class="thirdTitle">
+					<view>
+						{{item.phone}}
+					</view>
+					<view class="blue">
+						<text class="iconfont iconziliao secondIcon"></text>
+						<text>{{item.number}}单</text>
+					</view>
+				</view>
+				<!-- table -->
+				<view class="table">
+					<view class="flex">
+						<view class="tableTop">
+							本月
+						</view>
+						<view class="tableTop borderLeft">
+							总计
+						</view>
+					</view>
+					<view class="flex">
+						<view class="tableBottom {{index1==item.price.length-1?'borderRight':''}}" wx:for="{{item.price}}" wx:for-item="item1"
+						wx:for-index="index1" wx:key="index1">
+							<view>
+								￥{{item1}}
+							</view>
+							<view class="marginTop">
+								销售
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		
+	</view>

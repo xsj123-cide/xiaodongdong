@@ -1,0 +1,47 @@
+
+	.title{
+		width: 100%;
+		height: 80rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	.titleItem{
+		height: 80rpx;
+		line-height: 80rpx;
+		font-size: 28rpx;
+		text-align: center;
+		position: relative;
+		flex: 1;
+		
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+	.borderRight{
+		/* border-right: 1px solid #DCDCDC; */
+	}
+	.borderRight::before{
+		content: "";
+		height: 40rpx;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		border: 1px solid #DCDCDC;
+	}
+	.active{
+	}
+	.active::after{
+		content: "";
+		width: 50rpx;
+		border: 1px solid #72C7FF;
+		position: absolute;
+		bottom: 5rpx;
+		left: 50%;
+		transform: translateX(-50%);
+	}

@@ -1,0 +1,60 @@
+	.dingwei{
+		width: 100%;
+		padding: 5px 15px;
+		font-size: 28rpx;
+		letter-spacing: 1px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.dingweiCity{
+		color: #FF4500;
+	}
+	.list{
+		width: 100%;
+		font-size: 28rpx;
+		letter-spacing: 1px;
+	}
+	.title{
+		width: 95%;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 15px;
+		background-color: #F5F5F5;
+		margin-top: 10px;
+	}
+	.itemView{
+		padding: 0 18px;
+	}
+	.item{
+		padding: 10px;
+		border-bottom: 1px solid #D3D3D3;
+	}
+	.rightDaohang{
+		width: 35px;
+		text-align: center;
+		position: fixed;
+		right: 0;
+		top: 15%;
+		
+		font-size: 24rpx;
+	}
+	.active{
+		font-weight: bold;
+	}
+	.remenView{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding:5px 15px;
+	}
+	.remenItem{
+		width: 70px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		margin-left: 10px;
+		margin-top: 10px;
+		border: 1px solid #D3D3D3;
+	}

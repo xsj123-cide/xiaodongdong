@@ -1,0 +1,451 @@
+
+
+<daohang isBack="true" backColor="white">
+	<view slot="center" class="daohangTitle">
+		悦动行
+	</view>
+</daohang>
+	<scroll-view scroll-y class="scroll" style="height:{{height1}};" scroll-into-view="{{scrollItem}}">
+		<!-- first -->
+		<view class="first">
+			<swiper class="firstImgView">
+				<swiper-item>
+					<image wx:if="{{imgArray[0].type == 0}}" src="{{imgArray[0].img}} " class="firstImg"></image>
+					<video wx:if="{{imgArray[0].type == 1}}" poster="{{imgArray[0].img}}" src="{{imgArray[0].videoUrl}}" 
+					controls object-fit="fill" class="video1"
+					></video>
+					<view class="bianhao">
+						<view class="bianhaoView">
+						</view>
+						<view class="bianhaoText">活动编号：{{first.bianhao}}</view>
+					</view>
+					<view class="baoming">
+						<view class="baomingView">
+						</view>
+						<view class="baomingView1">
+							<view class="baomingRed"></view>
+							<view class="baomingText1">
+								{{first.name}}
+							</view>
+							<view class="baomingText2">
+								已经报名
+							</view>
+						</view>
+					</view>
+				</swiper-item>
+				<swiper-item wx:for="{{imgArray}}" wx:key="index" wx:if="{{index>0}}">
+					<image wx:if="{{item.type == 0}}" src="{{item.img}} " class="firstImg"></image>
+					<video wx:if="{{item.type == 1}}" poster="{{item.img}}" src="{{item.videoUrl}}" 
+					controls object-fit="fill" class="video1"
+					></video>
+				</swiper-item>
+			</swiper>
+			<view class="firstView1">
+				<view class="firstView1Left">
+					<view class="firstText1">
+						{{first.text1}}
+					</view>
+					<view class="firstText2">
+						{{first.text2}}
+					</view>
+				</view>
+				<view class="firstView1Right">
+					<view class="firstText3">
+						距结束仅剩:
+					</view>
+					<view class="firstText3">
+						<text class="firstRed">{{time[0]}}</text>日
+						<text class="firstRed">{{time[1]}}</text>时
+						<text class="firstRed">{{time[2]}}</text>分
+						<text class="firstRed">{{time[3]}}</text>秒
+					</view>
+				</view>
+			</view>
+			<view class="firstView2">
+				<view class="firstTop">
+					<view class="firstLeft">
+						{{name}}
+					</view>
+					<view class="firstRight" bindtap="changeicon">
+						<view class="iconfont iconshoucang rightIcon {{ifshouc?'rightIcon_s':''}}">
+						</view>
+						<view>
+							收藏
+						</view>
+					</view>
+				</view>
+				<view class="firstButton">
+					<view class="firstButtonItem" wx:for="{{features}}" wx:key="index">
+						{{item}}
+					</view>
+				</view>
+				<view class="firstArray">
+					<view class="arrayItem" wx:for="{{first.array}}" wx:key="index">
+						<image src="{{item}}" class="arrayImg" wx:if="{{item!=''}}"></image>
+					</view>
+					<view class="arrayIcon iconfont iconcaozuo-gengduo" bindtap="baomingInfo"></view>
+				</view>
+				<view class="firstBottom">
+					<view>
+						总数量：<text class="firstRed">{{first.total}}</text>
+					</view>
+					<view>
+						剩余：<text class="firstRed">{{slider}}</text>
+					</view>
+				</view>
+				<view class="slider">
+					<view class="sliderAcitve" style="width: {{slider}}%;"></view>
+				</view>
+			</view>
+		</view>
+			<!-- second -->
+			<view class="second">
+				<view class="secondTitle">
+					活动说明
+				</view>
+				<view class="secondTime">
+					活动时间：{{second.time}}
+				</view>
+				<view class="secondInfo">
+					集合地点： {{second.jihe}}
+					<view class="secondRight" bindtap="changeUrl" data-url="../../map/map">
+						<view class="iconfont iconweizhi"></view>
+						<view class="secondText">
+							地图
+						</view>
+					</view>
+				</view>
+				<view class="secondInfo">
+					活动地点： {{second.huodong}}
+					<view class="secondRight" bindtap="changeUrl" data-url="../../map/map">
+						<view class="iconfont iconweizhi srcondIcon"></view>
+						<view class="secondText">
+							地图
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- third -->
+			<view class="third">
+				<view class="thirdTitle">
+					<view class="xuan">
+						选
+					</view>
+					可选套餐
+				</view>
+				<view class="thirdItem" wx:for="{{taocans}}" wx:key="index">
+					{{item.id}}
+					<image src="{{item.img}}" class="thirdImg"></image>
+					<view class="thirdLeft">
+						<view class="thirdText1">
+							{{item.name}}
+						</view>
+						<view class="flex">
+							<view class="thirdButton">
+								随买随用
+							</view>
+							<view class="thirdButton">
+								随买随用
+							</view>
+						</view>
+						<view class="thirdLeftBottom">
+							已报名：{{item.saleNum}}
+							<view class="thirdText2">
+								活动须知 >
+							</view>
+						</view>
+					</view>
+					<view class="thirdRight">
+						<view>
+							<!-- <text>￥</text> -->
+							<text class="thirdMoney">{{item.priceName}}</text>
+						</view>
+						<view  class="thirdButton1" open-type="getUserInfo" bindgetuserinfo="getUserinfo"  bindtap="changeUrl" data-url="../baomingBuy/baomingBuy?tcId={{item.tcId}}&id={{id}}">
+							 <!-- <button style="visibility:hidden" open-type="getUserInfo" bindgetuserinfo="getUserinfo"></button>  -->
+							 立即报名
+						</view>
+					</view>
+				</view>
+				<!-- 更多套餐 -->
+				<view class="thirdMore">
+					查看更多套餐<text class="iconfont icondownarrow thirdIcon"></text>
+				</view>
+			</view>
+			<!-- fourth -->
+			<view class="fourthTitle">
+				<view class="fourthTitleItem {{index==0?'fourthAcitive':''}}" bindtap="changeIndex" data-id="{{0}}">
+					常见问答
+				</view>
+				<view class="fourthTitleItem {{index==1?'fourthAcitive':''}}" bindtap="changeIndex" data-id="{{1}}">
+					报名须知
+				</view>
+				<view class="fourthTitleItem {{index==2?'fourthAcitive':''}}" bindtap="changeIndex" data-id="{{2}}">
+					商品详情
+				</view>
+			</view>
+			<view class="fourth">
+				<view class="fourthView1">
+					<view class="fourthTitle1">
+						<image src="{{fourth.img1}}" class="fourthImg1"></image>
+						<view>
+							<view class="fourthText1">
+								{{fourth.name}}
+							</view>
+							<view class="fourthText2">
+								活动执行方：{{fourth.bear}}
+							</view>
+						</view>
+						<view class="fourthButton1">
+							查看更多
+						</view>
+					</view>
+					<view data-type="problem" bindtap="zhezhao1">
+						<view class="tiwenTitle" id="wenti">
+							<view class="titleLeft">
+								常见问答
+							</view>
+							<view class="titleRight">
+								全部33个问题
+							</view>
+						</view>
+						<view class="fourthTiwen">
+							<view class="fourthTiwenItem" wx:for="{{fourth.tiwen}}" wx:key="index">
+								<view>
+									<view class="iconfont iconwenhao tiwenIcon"></view>
+									<view class="iconfont iconwenhao tiwenIcon"></view>
+								</view>
+								<view>
+									<view class="tiwenText1">
+										 {{item.title}}
+									</view>
+									<view class="tiwenText2">
+										 {{item.answer}}
+									</view>
+									<view class="tiwenText3">
+										 全部{{item.number}}个回答
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+					<!-- 报名须知 -->
+					<view>
+						<view class="xuzhiTitle" id="xuzhi">
+							报名须知
+						</view>
+						<view>
+							<view class="xuzhi" wx:for="{{bmzxs}}" wx:key="index">
+								<view class="{{item.yes? '':'grey'}} xuzhiLeft">
+									{{item.name}}
+								</view>
+								<view class="xuzhiRight">
+									{{item.remark}}
+								</view>
+							</view>
+							<!-- <view class="xuzhi">
+								<view class="xuzhiLeft">
+									随时退
+								</view>
+								<view class="xuzhiRight">
+									{{fourth.xuzhi[1]}}
+								</view>
+							</view>
+							<view class="xuzhi">
+								<view class="xuzhiLeft grey">
+									换票使用
+								</view>
+								<view class="xuzhiRight">
+									{{fourth.xuzhi[2]}}
+								</view>
+							</view> -->
+						</view>
+						<view class="xuzhiTitle1">
+							费用说明
+						</view>
+						<view>
+							<view class="xuzhi">
+								<view class="shuomingLeft">
+									费用包含
+								</view>
+								<view class="shuomingRight">
+									{{fourth.shuoming[0]}}
+								</view>
+							</view>
+							<view class="xuzhi">
+								<view class="shuomingLeft">
+									费用不含
+								</view>
+								<view class="shuomingRight">
+									{{fourth.shuoming[1]}}
+								</view>
+							</view>
+							<view class="xuzhi">
+								<view class="shuomingLeft">
+									优惠政策
+								</view>
+								<view class="shuomingRight">
+									{{fourth.shuoming[2]}}
+								</view>
+							</view>
+						</view>
+						<view class="xuzhiTitle1">
+							集合时间
+						</view>
+						<view class="jihe">
+							{{fourth.jihe}}
+						</view>
+						<view class="xuzhiTitle1">
+							其他说明
+						</view>
+						<view>
+							<view class="xuzhi">
+								<view class="shuomingLeft">
+									发票说明
+								</view>
+								<view class="shuomingRight">
+									{{fourth.other[0]}}
+								</view>
+							</view>
+							<view class="xuzhi">
+								<view class="shuomingLeft">
+									订单查询
+								</view>
+								<view class="shuomingRight">
+									{{fourth.other[1]}}
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- 详情 -->
+			<view class="xiangqing">
+				<view class="xiangqingTitle" id="xiangqing">
+					 商品详情
+				</view>
+				<view class="xiangqingView">
+						<rich-text nodes="{{detail}}"></rich-text>
+					<image src="../../../static/img/shouye/haibao.jpg" class="xiangqingImg"></image>
+				</view>
+			</view>
+			<!-- 广告 -->
+			<swiper class="advertisement" autoplay indicator-dots>
+				<swiper-item>
+					<image src="../../../static/img/lunbo1.jpg" class="advertisementImg"></image>
+				</swiper-item>
+				<swiper-item>
+					<image src="../../../static/img/lunbo2.jpg" class="advertisementImg"></image>
+				</swiper-item>
+			</swiper>
+			<!-- 更多精选活动 -->
+			<view class="more">
+				<view class="moreTitle">
+					更多精选活动
+				</view>
+				<view class="moreView">
+					<view class="moreItem" wx:for="{{more}}" wx:key="index">
+						<view class="moreView1">
+							<image src="{{item.img}}" class="moreImg"></image>
+						</view>
+						<view class="moreView2">
+							<view class="moreText1">
+								{{item.title}}
+							</view>
+							<view class="moreText2">
+								￥<text class="morePrice">{{item.price}}</text>
+							</view>
+							<view class="moreItemBottom">
+								<view class="through">
+									<text style="font-size: 24rpx;">￥</text>{{item.yuanjia}}
+								</view>
+								<view>
+									{{item.number}}人购买
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- 底部 -->
+			<view class="bottomText1">
+				已经到底了喲~
+			</view>
+			<view class="bottomText2">
+				悦动行旅游提供技术支持
+				<view>
+					0592-6666666
+				</view>
+			</view>
+	</scroll-view>
+	<!-- 底部固定 -->
+	<view class="fixed"></view>
+	<view class="fixed1">
+		<view class="flex">
+			<text class="iconfont iconshouye fixedIcon"></text>
+			<text class="fixedText">首页</text>
+		</view>
+		<view class="fixedView">
+			<text class="iconfont iconshouye fixedIcon"></text>
+			<text class="fixedText">售前咨询</text>
+		</view>
+		<view class="fixedView1">
+			<view class="fixedButton" data-type="haibao" bindtap="zhezhao1">
+				分享给好友
+			</view>
+			<!-- <view class="fixedButton" bindtap="changeUrl" data-url="../baomingBuy/baomingBuy?id={{id}}">
+				立即报名
+			</view> -->
+		</view>
+	</view>
+	<!-- 遮罩 -->
+	<view class="zhezhao" wx:if="{{isZhezhao}}" bindtap="cancelZhezhao"></view>
+	<view class="haibao" wx:if="{{isHaibao}}">
+		<view class="haibaoTop">
+			{{zhezhaoText}}
+		</view>
+		<view class="flex">
+			<view class="haibaoButton" data-type="{{false}}" bindtap="haibao1">
+				复制文本
+			</view>
+			<view class="haibaoButton rightButton" data-type="{{true}}" bindtap="haibao1">
+				保存海报
+			</view>
+		</view>
+	</view>
+	<!-- 问题 -->
+	<view class="problem" wx:if="{{isProblem}}">
+		<view class="problemTitle">
+			<view class="iconfont iconwenhao problemIcon"></view>
+			<view class="titleView">
+				<view class="titleText">{{problem[problemIndex].title}}</view>
+				<view class="titleTime">{{problem[problemIndex].time}}</view>
+			</view>
+			<view class="titleCanel" bindtap="cancelProblem">
+				X
+			</view>
+		</view>
+		<view class="problemSecond">
+			<view class="iconfont iconwenhao problemIcon"></view>
+			<view class="titleTime">共{{problem[problemIndex].number}}条回答</view>
+		</view>
+		<view>
+			<view class="problemItem" wx:for="{{problem[problemIndex].array}}" wx:key="index" wx:if="{{index<4}}">
+				<view class="flex">
+					<image src="{{item.img}}" class="problemImg"></image>
+					<view>
+						<view class="problemItemText">
+							{{item.name}}
+						</view>
+						<view class="problemItemText">
+							{{item.time}}
+						</view>
+					</view>
+				</view>
+				<view class="problemAnswer">
+					{{item.text}}
+				</view>
+			</view>
+		</view>
+		<view class="iconfont iconzuojiantou1 leftIcon1" data-type="left" bindtap="changeProblem"></view>
+		<view class="iconfont iconyoujiantou1 rightIcon1" data-type="right" bindtap="changeProblem"></view>
+	</view>

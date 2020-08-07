@@ -1,0 +1,114 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			核销订单
+		</view>
+	</daohang>
+	<!-- title -->
+	<swiperTitle array="{{array}}" bind:index="getIndex">
+	</swiperTitle>
+	<!-- 未游玩 -->
+	<view wx:if="{{index==0}}">
+		<view class="wholeItem {{index==0?'borderTop':''}}" wx:for="{{whole}}" wx:key="index">
+			<view class="wholeTitle">
+				<view class="topLeft">
+					<image src="{{item.touxiang}}" class="wholeItemImg"></image>
+					<view>
+						<view>
+							微信名
+						</view>
+						<view class="infoText">
+							姓名：{{item.name}}
+						</view>
+					</view>
+				</view>
+				<view>
+					<view class="topText1">
+						订单号：{{item.dingdan}}
+					</view>
+					<view class="topText2 infoText">
+						下单时间：{{item.xiadan}}
+					</view>
+				</view>
+			</view>
+			<view class="wholeInfo">
+				<view class="flex">
+					<image src="{{item.img}}" class="infoImg"></image>
+					<view class="infoRight">
+						<view class="infoTitle">
+							{{item.title}}
+						</view>
+						<view class="infoText">
+							套餐：{{item.taocan}}
+						</view>
+						<view class="infoText">
+							数量：{{item.number}}张
+						</view>
+						<view class="infoText1 infoTitle">
+							预计游玩时间：{{item.time}}
+						</view>
+						<view class="infoText">
+							金额：￥<text class="infoRed">{{item.price}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="hexiao">
+					暂未核销
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	<!-- 已游玩 -->
+	<view wx:if="{{index==1}}">
+		<view class="wholeItem {{index==0?'borderTop':''}}" wx:for="{{already}}" wx:key="index">
+			<view class="wholeTitle">
+				<view class="topLeft">
+					<image src="{{item.touxiang}}" class="wholeItemImg"></image>
+					<view>
+						<view>
+							微信名
+						</view>
+						<view class="infoText">
+							姓名：{{item.name}}
+						</view>
+					</view>
+				</view>
+				<view>
+					<view class="topText1">
+						订单号：{{item.dingdan}}
+					</view>
+					<view class="topText2 infoText">
+						核销时间：{{item.hexiao}}
+					</view>
+				</view>
+			</view>
+			<view class="wholeInfo">
+				<view class="flex">
+					<image src="{{item.img}}" class="infoImg"></image>
+					<view class="infoRight">
+						<view class="infoTitle">
+							{{item.title}}
+						</view>
+						<view class="infoText">
+							套餐：{{item.taocan}}
+						</view>
+						<view class="infoText">
+							数量：{{item.number}}张
+						</view>
+						<view class="infoText1 infoTitle">
+							核销时间：{{item.time}}
+						</view>
+						<view class="infoText">
+							金额：￥<text class="infoRed">{{item.price}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="hexiao">
+					核销人：{{item.hexiaoName}}
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	

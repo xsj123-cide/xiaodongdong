@@ -1,0 +1,63 @@
+
+	.back{
+		width:750rpx;
+		height:220rpx;
+		color: white;
+		background:rgba(114,200,255,1);
+		padding-top: 30rpx;
+	}
+	.backText1{
+		font-size: 34rpx;
+		font-weight: bold;
+		text-align: center;
+	}
+	.backText2{
+		font-size: 40rpx;
+		margin-top: 20rpx;
+		text-align: center;
+	}
+	.itemView{
+		width: 100%;
+		padding:20rpx 60rpx;
+		position: relative;
+		bottom: 70rpx;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.item{
+		width:254rpx;
+		height:188rpx;
+		text-align: center;
+		font-size: 28rpx;
+		background:rgba(255,255,255,1);
+		border:1px solid rgba(240,240,240,1);
+		box-shadow:-2rpx 14rpx 38rpx 0rpx rgba(204,204,204,0.71);
+		border-radius:10rpx;
+		margin-bottom: 50rpx;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.red{
+		color: red;
+	}
+	.marginTop{
+		margin-top: 15rpx;
+	}
+	.button{
+		width:270rpx;
+		height:86rpx;
+		line-height: 86rpx;
+		text-align: center;
+		color: white;
+		font-size: 28rpx;
+		background:rgba(114,200,255,1);
+		box-shadow:-2rpx 14rpx 38rpx 0rpx rgba(56,140,194,0.71);
+		border-radius:42rpx;
+		
+		margin: 0 auto;
+	}

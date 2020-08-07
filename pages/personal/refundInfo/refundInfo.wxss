@@ -1,0 +1,107 @@
+
+	.first{
+		width: 100%;
+		height: 238rpx;
+		color: white;
+		background-color: #72C8FF;
+		padding: 20rpx;
+		padding-right: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.firstIcon{
+		font-size: 80rpx;
+		margin-left: 20rpx;
+		margin-right: 20rpx;
+	}
+	.firstText1{
+		font-size: 36rpx;
+		font-weight: bold;
+	}
+	.firstText2{
+		width: 410rpx;
+		margin-top: 20rpx;
+		font-size: 24rpx;
+		line-height: 38rpx;
+	}
+	.firstButton{
+		width:158rpx;
+		height:60rpx;
+		line-height: 60rpx;
+		text-align: center;
+		font-size: 26rpx;
+		border:2rpx solid rgba(255,255,255,1);
+		border-radius:30rpx;
+		margin-left: 15rpx;
+	}
+	.second{
+		font-size: 26rpx;
+		padding: 30rpx;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.secondItem{
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 20rpx;
+	}
+	.secondText{
+		color: #999999;
+		margin-right: 42rpx;
+	}
+	.secondRight{
+		width: 520rpx;
+		
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	.third{
+		padding: 0 30rpx;
+		padding-top: 40rpx;
+	}
+	.thirdView{
+		display: flex;
+		flex-direction: row;
+	}
+	.time{
+		width: 100rpx;
+		font-size: 20rpx;
+		margin-right: 30rpx;
+	}
+	.marginTop{
+		margin-top: 5rpx;
+	}
+	.thirdItem{
+		padding:42rpx;
+		padding-top: 5rpx;
+		position: relative;
+		font-size: 22rpx;
+	}
+	.thirdIcon{
+		width: 40rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		font-size: 20rpx;
+		text-align: center;
+		border-radius: 100%;
+		
+		position: absolute;
+		left: -20rpx;
+		top: 0rpx;
+	}
+	.white{
+		font-size: 26rpx;
+		color: #DCDCDC;
+		background-color: white;
+		border: 1px solid #DCDCDC;
+	}
+	.blue{
+		color: white;
+		background-color: #72C8FF;
+	}
+	.borderLeft{
+		border-left: 1px solid #DCDCDC;
+	}

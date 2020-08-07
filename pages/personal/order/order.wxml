@@ -1,0 +1,150 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			我的订单
+		</view>
+	</daohang>
+	<!-- title -->
+	<view class="title">
+		<view class="titleItem {{titleIndex==0?'active':''}}" bindtap="changeIndex" data-index="{{0}}">
+			全部
+		</view>
+		<view class="titleItem {{titleIndex==1?'active':''}}" bindtap="changeIndex" data-index="{{1}}">
+			待使用
+		</view>
+		<view class="titleItem {{titleIndex==2?'active':''}}" bindtap="changeIndex" data-index="{{2}}">
+			待支付
+		</view>
+		<view class="titleItem {{titleIndex==3?'active':''}}" bindtap="changeIndex" data-index="{{3}}">
+			退款/售后
+		</view>
+	</view>
+	<!-- 全部 -->
+	<view>
+		<view class="wholeItem {{index==0?'borderTop':''}}" style="border-bottom:none" wx:if="{{wholelen==0}}">
+			<noproduct name="order"></noproduct>
+		</view>
+		<view class="wholeItem {{index==0?'borderTop':''}}" wx:for="{{whole}}" wx:key="index" wx:if="{{wholelen!=0}}">
+			<view class="wholeTitle">
+				<view class="marginLeft">
+					订单号：{{item.orderNo}}
+				</view>
+				<view class="red">
+					{{item.orderStatusName}}
+				</view>
+			</view>
+			<view class="wholeInfo"  bindtap="changeUrl" data-url="../orderDetail/orderDetail?id={{item.orderNo}}">
+				<image src="{{item.mainPhoto}}" class="infoImg"></image>
+				<view class="infoRight">
+					<view class="infoTitle">
+						{{item.productName}}
+					</view>
+					<view class="infoText">
+						套餐：{{item.taocan}}
+					</view>
+					<view class="infoText">
+						数量：{{item.buyNum}}张
+					</view>
+					<view class="infoText1">
+						合计：￥<text class="infoRed">{{item.price}}</text>
+					</view>
+					<view class="infoTime">
+						使用有效期：{{item.dueName}}
+					</view>
+				</view>
+			</view>
+			<view class="infoBottom">
+				<view class="infoButton" bindtap="changeUrl" data-url="../orderDetail/orderDetail?id={{item.orderNo}}">
+					订单详情
+				</view>
+				<view class="infoButton"  bindtap="continuepay" data-oderNo="{{item.orderNo}}"  wx:if="{{item.orderStatus==10}}">
+					继续付款
+				</view>
+				<view class="infoButton" wx:if="{{item.orderStatus==20}}">
+					申请发票
+				</view>
+				<view class="infoButton" wx:if="{{titleIndex!=2}}" wx:if="{{item.orderStatus==60}}" bindtap="changeUrl" data-url="../evaluate/evaluate?orderId={{item.id}}&productId={{item.productId}}&img={{item.mainPhoto}}&title={{item.productName}}">
+					评价
+				</view>
+			</view>
+		</view>
+		
+	</view>
+		<!-- 待支付 -->
+	<!-- <view wx:if="{{titleIndex==2}}">
+		<view class="wholeItem {{index==0?'borderTop':''}}" wx:for="{{waitpay}}" wx:key="index">
+			<view class="wholeTitle">
+				<view class="marginLeft">
+					订单号：{{item.orderNo}}
+				</view>
+				<view class="red">
+					{{item.orderStatusName}}
+				</view>
+			</view>
+			<view class="wholeInfo">
+				<image src="{{item.mainPhoto}}" class="infoImg"></image>
+				<view class="infoRight">
+					<view class="infoTitle">
+						{{item.productName}}
+					</view>
+					<view class="infoText">
+						套餐：{{item.taocan}}
+					</view>
+					<view class="infoText">
+						数量：{{item.buyNum}}张
+					</view>
+					<view class="infoText1">
+						合计：￥<text class="infoRed">{{item.price}}</text>
+					</view>
+					<view class="infoTime">
+						使用有效期：{{item.usedTime}}
+					</view>
+				</view>
+			</view>
+			<view class="infoBottom">
+				<view class="infoButton" bindtap="changeUrl" data-url="../orderDetail/orderDetail?id={{item.id}}">
+					订单详情
+				</view>
+			</view>
+		</view>
+		
+	</view> -->
+	<!-- 退款 -->
+	<!-- <view wx:if="{{titleIndex==3}}">
+		<view class="wholeItem {{index==0?'borderTop':''}}" wx:for="{{refund}}" wx:key="index">
+			<view class="wholeTitle">
+				<view class="marginLeft">
+					订单号：{{item.dingdan}}
+				</view>
+				<view class="red">
+					{{item.state}}
+				</view>
+			</view>
+			<view class="wholeInfo">
+				<image src="{{item.img}}" class="infoImg"></image>
+				<view class="infoRight">
+					<view class="infoTitle">
+						{{item.title}}
+					</view>
+					<view class="infoText">
+						套餐：{{item.taocan}}
+					</view>
+					<view class="infoText">
+						数量：{{item.number}}张
+					</view>
+					<view class="infoText1">
+						合计：￥<text class="infoRed">{{item.price}}</text>
+					</view>
+					<view class="infoTime">
+						使用有效期：{{item.time}}
+					</view>
+				</view>
+			</view>
+			<view class="infoBottom">
+				<view class="infoButton" bindtap="changeUrl" data-url="../orderDetail/orderDetail">
+					退款详情
+				</view>
+			</view>
+		</view>	
+	</view> -->
+	

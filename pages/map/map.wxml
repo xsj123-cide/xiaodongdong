@@ -1,0 +1,8 @@
+<daohang isBack="true" backColor="white">
+	<view slot="center" class="daohangTitle">
+		悦动行
+	</view>
+</daohang>
+<view class='view'>
+  <mapa addr="{{addr}}"></mapa>
+</view>

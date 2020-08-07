@@ -1,0 +1,70 @@
+
+	.view{
+		width: 100%;
+		height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.back{
+		width: 100%;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		font-size: 37rpx;
+		font-weight: bold;
+		color: white;
+		background-color: #72C8FF;
+	}
+	.first{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 22rpx;
+		background-color: white;
+		padding: 20rpx 30rpx;
+		padding-right: 0;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.firstIcon1{
+		font-size: 42rpx;
+		margin-right: 20rpx;
+	}
+	.firstInput{
+		width: 300rpx;
+		color: #999999;
+		padding: 5rpx 20rpx;
+		border: 1px solid #999999;
+	}
+	.hexiao{
+		width:85rpx;
+		height:50rpx;
+		line-height: 50rpx;
+		text-align: center;
+		background:rgba(114,200,255,1);
+		border-radius:5rpx;
+		margin-left: 20rpx;
+	}
+	.firstIcon2{
+		font-size: 42rpx;
+		margin: 0 20rpx;
+	}
+	.second{
+		padding: 42rpx 50rpx;
+		background-color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.secondItem{
+		width: 300rpx;
+		font-size: 28rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 30rpx;
+	}
+	.secondIcon{
+		color: #72C8FF;
+		font-size: 100rpx;
+		margin-right: 15rpx;
+	}

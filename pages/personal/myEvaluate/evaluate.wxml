@@ -1,0 +1,85 @@
+
+	<daohang isBack="true">
+		<view class="daohangTitle" slot="center">
+			我的评价
+		</view>
+	</daohang>
+	<!-- title -->
+	<view class="title">
+		<view class="titleItem borderRight {{titleIndex==0?'active':''}}" bindtap="changeIndex" data-index="{{0}}">
+			待评价({{waitlength}})
+		</view>
+		<view class="titleItem {{titleIndex==1?'active':''}}" bindtap="changeIndex" data-index="{{1}}">
+			已评价({{yilength}})
+		</view>
+	</view>
+	<!-- 还未评价 -->
+	<view class="content" wx:if="{{titleIndex==0}}">
+		<view class="item" wx:for="{{infowait}}" wx:key="index">
+			<view class="itemTitle">
+				下单时间：{{item.createTime}}
+			</view>
+			<view class="flex">
+				<image src="{{item.mainPhoto}}" class="itemImg"></image>
+				<view class="itemRight">
+					<view class="itemText">
+						{{item.productName}}
+					</view>
+					<view class="itemView">
+						<view>
+							总价：<text class="red">￥{{item.price}}</text>
+						</view>
+						<view>
+							数量：{{item.buyNum}}
+						</view>
+					</view>
+					<view class="itemView1">
+						<view class="itemButton"  bindtap="changeUrl" data-url="../evaluate/evaluate?orderId={{item.id}}&productId={{item.productId}}&img={{item.mainPhoto}}&title={{item.productName}}">
+							立即评论
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	
+	<!-- 已经评价 -->
+	<view class="already" wx:if="{{titleIndex==1}}">
+		<view class="item1 borderBottom" wx:for="{{infos}}" wx:key="index">
+			<image src="{{item.photos}}" class="item1Img"></image>
+			<view>
+				<view class="itemName">
+					{{item.createBy}}
+				</view>
+				<view class="item1Time">
+					{{item.createTime}}
+				</view>
+				<view class="item1View">
+					<image src="{{item.mainPhoto}}" class="item1Img1"></image>
+					<view class="item1Text1">
+						{{item.remark}}
+					</view>
+				</view>
+				<view class="item1View1">
+					<view class="flex">
+						<view class="red">
+							{{item.commentLevel}}分
+						</view>
+						<view wx:for="{{5}}" wx:key="index" class="iconfont iconpingfen item1Icon {{index<item.commentLevel?'yello':''}}" wx:for-item="item1">
+						</view>
+					</view>
+					<view bindtap="changeUrl" data-url="../../personal/orderDetail/orderDetail?id={{item.orderNo}}">
+						查看订单
+					</view>
+				</view>
+				<view class="item1View2">
+					<view>
+						客服回复
+					</view>
+					<view class="item1Text2">
+						{{item.remark}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>

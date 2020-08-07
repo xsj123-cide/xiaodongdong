@@ -1,0 +1,124 @@
+	<scroll-view  scroll-y bindscroll="scroll1" class="scroll1">
+		<daohang backColor="{{daohangColor}}">
+			<view slot="center" class="daohangTitle">
+				个人中心
+			</view>
+		</daohang>
+		<view class="back">
+			<image src="../../static/img/shouye/back.png" class="backImg"></image>
+			<view class="backDiv" style="margin-top: {{height}}px;">
+				<button class="login" open-type="getUserInfo" bindgetuserinfo="getUserinfo" wx:if="{{!isLogin}}">
+					一键登录
+				</button>
+				
+				<view class="infoView" wx:if="{{isLogin}}" data-url="../personal/userInfo/userInfo" bindtap="changeUrl">
+					<image src="{{userInfo.img}}" class="userImg"></image>
+					<view>
+						<view class="userName">
+							{{userInfo.name}}
+						</view>
+					</view>
+					<view class="userRight iconfont iconyoujiantou1">
+					</view>
+				</view>
+			</view> 
+		</view>
+		<!-- first -->
+		<view class="first" wx:if="{{ifxianshi}}">
+			<view class="firstItem" wx:for="{{mokuai[0].children}}" wx:key="index" data-url="{{item.url}}" bindtap="changeUrl">
+				<!-- <view class="iconfont firstIcon {{item.icon}}">
+				</view> -->
+				<image src="{{item.img}}" class="firstImg"></image>
+				<view class="firstItemText">
+					{{item.name}}
+				</view>
+			</view>
+		</view>
+		<!-- second -->
+		<view class="second_fri">
+		<view class="second" wx:if="{{index>0}}" wx:for="{{mokuai}}" wx:key="index" id="{{index}}" >
+			<view class="secondTitle">
+				{{item.name}}
+			</view>
+			<view class="secondDiv">
+				<view class="secondItem" wx:for="{{item.children}}" wx:for-item="childrenitem" wx:for-index="children_index"  wx:key="children_index"   data-url="{{childrenitem.url}}" bindtap="changeUrl">
+					<image src="{{childrenitem.img}}" class="firstImg"></image>
+					<view>
+						{{childrenitem.name}}
+					</view>
+					<button wx:if="{{childrenitem.url=='gotoKefu'}}" class="kefuButton" size="mini" bindtap="changeUrl" data-url="/pages/product/lianxi/lianxi">客服</button>
+				</view>
+			</view>
+		</view>
+		</view>
+			<!-- <view class="secondTitle">
+				我的订单
+			</view> -->
+			<!-- third -->
+			<!-- <view class="secondDiv">
+				<view class="secondItem">
+					<view class="iconfont secondIcon1 {{third[0].icon}}">
+					</view>
+					<view>
+						{{third[0].text}}
+					</view>
+					
+					<button class="kefuButton" size="mini" open-type="contact">客服</button>
+				</view>
+				<view class="secondItem" wx:for="{{third}}" wx:key="index" data-url="{{item.url}}" bindtap="changeUrl"
+				wx:if="{{index>0}}">
+					<view class="iconfont secondIcon1 {{item.icon}}">
+					</view>
+					<view>
+						{{item.text}}
+					</view>
+				</view>
+			</view> -->
+
+		<!-- fourth -->
+		<!-- <view class="third">
+			<view class="thirdTile">
+				分销中心
+			</view>
+			<view class="thirdView">
+				<view class="thirdItem" wx:for="{{fourth}}" wx:key="index" wx-if="{{index<3}}"
+				data-url="{{item.url}}" bindtap="changeUrl">
+					<view class="iconfont thirdIcon {{item.icon}}">
+					</view>
+					<view class="thirdNumber">
+						{{item.number}}
+					</view>
+					<view class="thirdText1">
+						{{item.text}}
+					</view>
+					<view class="thirdText2">
+						(元)
+					</view>
+				</view>
+				<view class="thirdItem" wx:for="{{fourth}}" wx:key="index" wx-if="{{index>2}}"
+				data-url="{{item.url}}" bindtap="changeUrl">
+					<view class="iconfont thirdIcon1 {{item.icon}}">
+					</view>
+					<view class="thirdText3">
+						{{item.text}}
+					</view>
+				</view>
+			</view>
+		</view> -->
+		<!-- fifth -->
+		<!-- <view class="fifth">
+			<view class="fifthTitle">
+				供应商平台
+			</view>
+			<view class="fifthView">
+				<view class="fifthItem" wx:for="{{fifth}}" wx:key="index"
+				data-url="{{item.url}}" bindtap="changeUrl">
+					<view class="iconfont fifthIcon {{item.icon}}">
+					</view>
+					<view class="fifthText">
+						{{item.text}}
+					</view>
+				</view>
+			</view>
+		</view> -->
+	</scroll-view>

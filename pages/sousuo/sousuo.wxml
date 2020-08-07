@@ -1,0 +1,85 @@
+	<scroll-view  scroll-y class="scroll1">
+	<daohang isBack="{{false}}">
+		<view slot="center" class="daohangTitle">
+			搜索
+		</view>
+	</daohang>
+	<!-- back -->
+	<view class="back">
+		<view class="backDiv" style="margin-top: {{height}}px;">
+			<view class="backInputDiv">
+				<view class="iconfont icon41">
+				</view>
+				<input type="text" class="backInput" placeholder="吃喝玩乐就找小动动~" bindinput="inputChange" bindblur="savehistory" value="{{inputvalue}}"/>
+			</view> 
+		</view>
+	</view>
+<view class="tuijian">
+	<view class="item" wx:if="{{inputText!=''||item !=[]}}" wx:for="{{item}}" wx:key="index"  bindtap="changeUrl" data-url="../product/product_detail/product_detail?id={{item.id}}">
+				<image src="{{item.img}}" class="itemImg1"></image>
+				<view class="itemTitle">
+					<view class="itemBorder1">
+						{{item.title}}
+					</view>
+					<view class="itemTitleRight">
+						<view>
+							<!-- {{item.city}} -->
+						</view>
+						<view class="itemBorder2"></view>
+						<view>
+							<!-- {{item.juli}} -->
+						</view>
+					</view>
+				</view>
+				<view class="itemInfo">
+					{{item.text}}
+				</view>
+				<view class="itemDiv1">
+					<view class="itemPrice">
+						{{item.priceArea}}
+					</view>
+					<view class="itemButton">
+						立即预定
+					</view>
+				</view>
+				<view class="flex" style="padding: 0 15rpx;">
+					<view class="bottomText">
+						原价{{item.oldPriceArea}}
+					</view>
+					<view class="bottomText1">
+						{{item.totals}}人购买
+					</view>
+				</view>
+			</view>
+</view>
+	<!-- 搜索 -->
+	<view class="sousuo" wx:if="{{inputText==''}}">
+		<view class="sousuoTitle" wx:if="{{hotSearchslen!=0}}">
+			热门搜索
+		</view>
+		<view class="sousuoDiv">
+			<view class="sousuoItem1" wx:for="{{hotSearchs}}" wx:key="index" bindtap="searchlishi" data-key="{{item}}">
+				{{item}}
+			</view>
+		</view>
+		<view class="sousuoTitle" wx:if="{{tuijianslen != 0}}">
+			推荐商区
+		</view>
+		<view class="shangqu">
+			<view class="shangquItem" wx:for="{{tuijians}}" wx:key="index">
+				<image src="{{item.img}}" class="shangquImg"></image>
+				<view class="shangquText">
+					{{item.text}}
+				</view>
+			</view>
+		</view>
+		<view class="sousuoTitle" wx:if="{{lishilen!=0}}">
+			搜索历史
+		</view>
+		<view class="sousuoDiv">
+			<view class="sousuoItem1" wx:for="{{lishi}}" wx:key="index" bindtap="searchlishi" data-key="{{item}}" >
+				{{item}}
+			</view>
+		</view>
+	</view>
+</scroll-view>

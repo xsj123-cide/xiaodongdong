@@ -1,0 +1,20 @@
+/* components/NoProduct/NoProduct.wxss */
+.body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+image {
+  width: 100rpx;
+  height: 100rpx;
+  margin:0 auto;
+  margin-top: 90rpx;
+}
+.texta {
+  margin-top: 30rpx;
+}
+.textb {
+  margin-top: 30rpx;
+  color: gray;
+}

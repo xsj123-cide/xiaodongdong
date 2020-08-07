@@ -1,0 +1,13 @@
+
+	<view class="view">
+		<view class="back iconfont iconzuojiantou1" bindtap="back1">
+		</view>
+		
+		<view class="haibao">
+			<image src="{{img}}" class="haibaoImg"></image>
+		</view>
+		<!-- button -->
+		<view class="button" bindtap="save1">
+			保存到相册
+		</view>
+	</view>

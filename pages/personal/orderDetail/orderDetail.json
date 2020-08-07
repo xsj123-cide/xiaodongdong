@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "jingxuan":"../../../components/jingxuan/jingxuan",
+    "amap":"../../map/map"
+  }
+}

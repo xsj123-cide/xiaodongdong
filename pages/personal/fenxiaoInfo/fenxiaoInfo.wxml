@@ -1,0 +1,69 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				资料修改
+			</view>
+		</daohang>
+		<!-- title -->
+		<view>
+			<view class="title">
+				分销商资料修改
+			</view>
+			<view class="title1">
+				请修改需要调整的内容
+			</view>
+		</view>
+		<!-- inputview -->
+		<view class="inputView">
+			<view class="inputItem">
+				<view class="inputText">
+					昵称
+				</view>
+				<input type="text" class="input1" value="{{info.nickName}}"/>
+			</view>
+			<view class="inputItem">
+				<view class="inputText">
+					姓名
+				</view>
+				<input type="text" class="input1" value="{{info.name}}"/>
+			</view>
+			<view class="inputItem">
+				<view class="inputText">
+					手机电话
+				</view>
+				<input type="text" class="input1" value="{{info.phone}}"/>
+			</view>
+			<view class="inputItem">
+				<view class="inputText">
+					广告语
+				</view>
+				<input type="text" class="input1" value="{{info.text}}"/>
+			</view>
+			<view class="inputItem">
+				<view class="inputText">
+					公司名称
+				</view>
+				<input type="text" class="input1" value="{{info.compony}}"/>
+			</view>
+			<picker mode="region" bindchange="cityChange">
+				<view class="inputItem">
+					<view class="inputText">
+						选择城市
+					</view>
+					<input type="text" class="input1" value="{{info.city}}" disabled/>
+				</view>
+			</picker>
+			<view class="inputItem">
+				<view class="inputText">
+					详细地址
+				</view>
+				<input type="text" class="input1" value="{{info.detail}}"/>
+			</view>
+		</view>
+		<!-- button -->
+		<view class="button1">
+			保存修改
+		</view>
+		
+	</view>

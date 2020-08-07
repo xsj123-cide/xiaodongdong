@@ -1,0 +1,13 @@
+<view style="padding-top: {{statusBarHeight}}px;height: {{height}}px;background-color: {{backColor}};" class="daohang">
+	<!-- 返回按钮 -->
+	<view class="iconfont iconzuojiantou1 leftJiantou" bindtap="goBack" wx:if="{{isBack}}">
+	</view>
+	<view class="left">
+		<slot name="left"></slot>
+	</view>
+	<view class="center">
+		<slot name="center"></slot>
+	</view>
+</view>
+<view class="zhanwei" style="height: {{height}}px;">
+</view>

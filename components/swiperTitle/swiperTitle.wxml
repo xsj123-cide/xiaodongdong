@@ -1,0 +1,8 @@
+
+	<!-- title -->
+	<view class="title">
+		<view class="titleItem {{titleIndex==index?'active':''}}" bindtap="changeIndex" data-index="{{index}}"
+		wx:for="{{array}}" wx:key="index" style="background-color: {{backColor}};">
+			{{item}}
+		</view>
+	</view>

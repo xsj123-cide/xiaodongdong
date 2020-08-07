@@ -1,0 +1,74 @@
+
+	.view{
+		width: 100%;
+		height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.title{
+		padding: 20rpx 30rpx;
+		font-size: 26rpx;
+		color: #999999;
+	}
+	.itemView{
+		border-top: 1px solid #DCDCDC;
+		border-bottom: 1px solid #DCDCDC;
+		padding-left: 30rpx;
+		background-color: white;
+	}
+	.itemItem{
+		font-size: 26rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+		padding: 20rpx 10rpx;
+	}
+	.borderBottom{
+		border-bottom: 1px solid #DCDCDC;
+	}
+	/* z-index: 100; */
+	.getPhone1{
+		position: absolute;
+		right: -50rpx;
+		z-index: 100;
+		opacity: 0;
+	}
+	/* z-index: 98; */
+	.getPhone2{
+		position: absolute;
+		right: 10rpx;
+		z-index: 98;
+	}
+	.itemLeft{
+		width: 130rpx;
+	}
+	.itemInput{
+		width: 430rpx;
+		font-size: 24rpx;
+		color: #999999;
+		margin-left: 10rpx;
+	}
+	.button{
+		width: 85%;
+		height: 70rpx;
+		line-height: 70rpx;
+		text-align: center;
+		font-size: 26rpx;
+		color: white;
+		background-color: #73C9FF;
+		margin: 0 auto;
+		margin-top: 70rpx;
+		
+	}
+	.buttona {
+		width: 85%;
+		height: 70rpx;
+		line-height: 70rpx;
+		text-align: center;
+		font-size: 26rpx;
+		color: white;
+		background-color: #73C9FF;
+		margin: 0 auto;
+		margin-top: 30rpx;
+		background-color: rgb(250, 73, 73);
+	}

@@ -1,0 +1,206 @@
+
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			悦动行活动预订
+		</view>
+	</daohang>
+	<view class="titleView">
+		{{title}} 
+	</view> 
+	<!-- 出行时间 -->
+	<view class="outTime">
+		<view class="title">
+			出行时间
+		</view>
+		<view class="timeView">
+			<view class="timeItem {{timeIndex==index?'active':''}}" wx:for="{{time}}" wx:key="index" data-number="{{index}}" bindtap="timeChange"
+			wx:if="{{index<3}}">
+				<view>
+					{{item.time}}
+				</view>
+				<view class="timeText1">
+					剩余：{{item.number}}份
+				</view>
+			</view>
+			<view class="timeItem {{timeIndex==3?'active':''}}" data-number="3" bindtap="timeChange">
+				<view>
+					{{time[3].time}}
+				</view>
+				<view class="timeText1" wx:if="{{time[3].number}}">
+					剩余：{{time[3].number}}份
+				</view>
+			</view>
+		</view>
+		<view class="title1">
+			到达时间
+		</view>
+		<view class="timeText2">
+			{{arriveTime}} 
+		</view>
+	</view>
+	<!-- 出行人数 -->
+	<view class="penple">
+		<view class="title1">
+			出行人数
+		</view>
+		<view class="penpleText">
+			起订说明>
+		</view>
+		<view>
+			<view class="penpleItem {{index!=(penple.length-1)?'borderBottom':''}}" wx:for="{{penple}}" wx:key="index">
+				{{item.type}}
+				<view class="flex">
+					<view class="jisuanLeft" data-number="{{index}}" data-type="reduce" bindtap="peopleChange">
+						-
+					</view>
+					<view class="jisuanCenter">
+						{{item.number}}
+					</view>
+					<view class="jisuanLeft" data-number="{{index}}" data-type="add" bindtap="peopleChange">
+						+
+					</view>
+				</view>
+			</view>
+			<view class="penpleMore">
+				查看更多选择
+				<text class="iconfont iconiconfontarrows"></text>
+			</view>
+		</view>
+	</view>
+	<!-- 信息 -->
+	<view class="info">
+		<view class="title1">
+			联系人信息
+		</view>
+		<view>
+			<view class="infoView1 borderBottom">
+				<view>
+					联系人姓名：
+				</view>
+				<input type="text" class="infoInput1"/>
+			</view>
+			<view class="infoView1">
+				<view>
+					手机号码：
+				</view>
+				<input type="text" class="infoInput1" placeholder="用于接收活动通知"/>
+			</view>
+		</view>
+		<view class="title1">
+			活动参与者信息
+		</view>
+		<view>
+			<view class="infoItem borderBottom">
+				<view class="infoYuan">
+					1
+				</view>
+				<view>
+					<view class="infoRight borderBottom">
+						<view>
+							姓名：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="请填写正确姓名"/>
+					</view>
+					<view class="infoRight borderBottom">
+						<view>
+							手机号码：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="用于接收活动通知"/>
+					</view>
+					<view class="infoRight">
+						<view>
+							身份证号：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="请填写正确号码"/>
+					</view>
+				</view>
+			</view>
+			<view class="infoItem">
+				<view class="infoYuan">
+					2
+				</view>
+				<view>
+					<view class="infoRight borderBottom">
+						<view>
+							姓名：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="请填写正确姓名"/>
+					</view>
+					<view class="infoRight borderBottom">
+						<view>
+							手机号码：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="用于接收活动通知"/>
+					</view>
+					<view class="infoRight">
+						<view>
+							身份证号：<text class="red">*</text>
+						</view>
+						<input type="text" class="infoInput2" placeholder="请填写正确号码"/>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 备注 -->
+	<view class="beizhu">
+		<view class="beizhutitle">
+			备注:
+		</view>
+		<input type="text" class="beizhuInput" placeholder=" 特殊备注信息"/>
+	</view>
+	<!-- 协议 -->
+	<view class="xieyi">
+    <view class="iconfont iconduigou xieyiIcon">
+	</view>
+	我已经查看并同意“活动须知”和“<text class="blue">服务条款</text>”
+	</view>
+	<!-- 底部 -->
+	<view class="bottom"></view>
+	<view class="bottom1">
+		<view>
+			总费用：<text class="red">￥1299.00</text>
+		</view>
+		<view class="bottomText">
+			预定金：<text class="red">￥299.00</text>
+		</view>
+		<view class="bottomRight" bindtap="successBuy" data-url="../successBuy/successBuy">
+			确认支付
+		</view>
+	</view>
+	<!-- 时间选择 -->
+	<view class="time" wx:if="{{isTime}}">
+		<view class="timeTile">
+			选择日期
+		</view>
+		<view class="timeMonth">
+			<view class="timeItem1 {{monthIndex==index?'monthActive':''}}" wx:for="{{month}}" wx:key="index" data-index="{{index}}"
+			bindtap="changeMonth">
+				{{item}}月
+			</view>
+		</view>
+		<view class="timeWeek">
+			<view class="weekItem" wx:for="{{week}}" wx:key="index">
+				{{item}}
+			</view>
+		</view>
+		<view class="timeDay">
+			<view class="timeDayItem" wx:for="{{timeArray}}" wx:key="index" wx:if="{{item==''}}">
+				{{item}}
+			</view>
+			<view class="timeDayItem {{dayIndex==index?'dayActive':''}}" wx:for="{{timeArray}}" wx:key="index" data-day="{{item}}" data-index="{{index}}" bindtap="switchDay"
+			wx:if="{{item!=''}}">
+				<view class="day">
+					{{item}}
+				</view>
+				<view class="shengyu" wx-if="{{dayIndex==index}}">
+					200份
+				</view>
+			</view>
+		</view>
+		<view class="dayButton" bindtap="closeTime">
+			确认
+		</view>
+	</view>
+	<view class="zhezhao" wx:if="{{isTime}}" bindtap="closeTime">
+	</view>

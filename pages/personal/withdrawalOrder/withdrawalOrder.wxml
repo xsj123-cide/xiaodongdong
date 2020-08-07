@@ -1,0 +1,132 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view slot="center" class="daohangTitle">
+				提现记录
+			</view>
+		</daohang>
+		
+		<swiperTitle array="{{array}}" backColor="white" bind:index="changeIndex">
+		</swiperTitle>
+		
+		<!-- 全部 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==0}}">
+			<view class="itemLeft" wx:if="{{item.isDakuan==true}}">
+				<view>
+					已
+				</view>
+				<view>
+					打
+				</view>
+				<view>
+					款
+				</view>
+			</view>
+			<view class="itemLeft backGrey" wx:if="{{item.isDakuan==false}}">
+				<view>
+					未
+				</view>
+				<view>
+					打
+				</view>
+				<view>
+					款
+				</view>
+			</view>
+			<view class="itemRight">
+				<view>
+					<view class="marginBottom">
+						提现编号：{{item.dingdan}}
+					</view>
+					<view class="flex marginBottom colorGrey">
+						<view class="marginRight">
+							申请佣金：{{item.yongjin}}
+						</view>
+						<view>
+							实际打款：{{item.shiji}}
+						</view>
+					</view>
+					<view class="colorGrey">
+						申请时间：{{item.time}}
+					</view>
+				</view>
+				
+				<view class="itemPrice">
+					+{{item.price}}
+				</view>
+			</view>
+		</view>
+		<!-- 已打款 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==1&&item.isDakuan==true}}">
+			<view class="itemLeft">
+				<view>
+					已
+				</view>
+				<view>
+					打
+				</view>
+				<view>
+					款
+				</view>
+			</view>
+			<view class="itemRight">
+				<view>
+					<view class="marginBottom">
+						提现编号：{{item.dingdan}}
+					</view>
+					<view class="flex marginBottom colorGrey">
+						<view class="marginRight">
+							申请佣金：{{item.yongjin}}
+						</view>
+						<view>
+							实际打款：{{item.shiji}}
+						</view>
+					</view>
+					<view class="colorGrey">
+						申请时间：{{item.time}}
+					</view>
+				</view>
+				
+				<view class="itemPrice">
+					+{{item.price}}
+				</view>
+			</view>
+		</view>
+		<!-- 未打款 -->
+		<view class="viewItem" wx:for="{{whole}}" wx:key="index" wx:if="{{titleIndex==2&&item.isDakuan==false}}">
+			<view class="itemLeft backGrey">
+				<view>
+					未
+				</view>
+				<view>
+					打
+				</view>
+				<view>
+					款
+				</view>
+			</view>
+			<view class="itemRight">
+				<view>
+					<view class="marginBottom">
+						提现编号：{{item.dingdan}}
+					</view>
+					<view class="flex marginBottom colorGrey">
+						<view class="marginRight">
+							申请佣金：{{item.yongjin}}
+						</view>
+						<view>
+							实际打款：{{item.shiji}}
+						</view>
+					</view>
+					<view class="colorGrey">
+						申请时间：{{item.time}}
+					</view>
+				</view>
+				
+				<view class="itemPrice">
+					+{{item.price}}
+				</view>
+			</view>
+		</view>
+		
+	</view>

@@ -1,0 +1,80 @@
+
+	.view{
+		width: 100%;
+		height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.first{
+		width:750rpx;
+		height:252rpx;
+		color: white;
+		background:rgba(114,200,255,1);
+		padding-top: 50rpx;
+		text-align: center;
+		font-size: 28rpx;
+	}
+	.flexItem{
+		flex: 1;
+		position: relative;
+	}
+	.borderRight{
+		
+	}
+	.borderRight::after{
+		content: "";
+		height: 40rpx;
+		border: 1px solid white;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.itemText{
+		margin-top: 7rpx;
+	}
+	.firstButton{
+		width:204rpx;
+		height:54rpx;
+		line-height: 54rpx;
+		text-align: center;
+		color: white;
+		font-size: 28rpx;
+		border:2rpx solid rgba(255,255,255,1);
+		border-radius:27px;
+		margin: 0 auto;
+		margin-top: 30rpx;
+	}
+	.secondItem{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+		
+		font-size: 26rpx;
+		padding: 20rpx 30rpx;
+		background-color: white;
+		border-bottom: 1px solid #F5F5F5;
+	}
+	.secondRight{
+		position: absolute;
+		right: 30rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.weixinImg{
+		width: 42rpx;
+		height: 42rpx;
+		margin-right: 15rpx;
+	}
+	.secondIcon1{
+		font-size: 30rpx;
+		color: #A9A9A9;
+	}
+	.secondBottom{
+		font-size: 26rpx;
+		text-align: center;
+		padding: 20rpx 30rpx;
+		color: #999999;
+		background-color: white;
+	}

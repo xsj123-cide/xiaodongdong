@@ -1,0 +1,134 @@
+
+	.inputView{
+		width:750rpx;
+		height:84rpx;
+		background:#87CEFA;
+		font-size: 22rpx;
+		
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.input1{
+		width:670rpx;
+		height:55rpx;
+		padding: 0 30rpx;
+		border-radius:25rpx;
+		color: #999999;
+		background-color: #F5F5F5;
+		
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.sousuoInput{
+		width: 460rpx;
+	}
+	.sousuoIcon{
+		margin-right: 15rpx;
+	}
+	.first{
+		padding: 20rpx;
+	}
+	.firstTitle{
+		font-size: 30rpx;
+		font-weight: bold;
+		color: #FF9630;
+		margin-bottom: 10rpx;
+	}
+	.between{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		color: #999999;
+		font-size: 20rpx;
+		margin-bottom: 20rpx;
+	}
+	.betweenRight{
+		font-size: 36rpx;
+	}
+	.swiperImg{
+		width:92%;
+		height:300rpx;
+		margin-bottom: 20rpx;
+	}
+	.swiper{
+		width: 100%;
+		height: 420rpx;
+		font-size: 24rpx;
+		text-align: center;
+	}
+	.swiperText{
+		text-align: left;
+		padding: 0 30rpx;
+		line-height: 38rpx;
+		
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	
+	.more{
+		padding: 20rpx;
+		background-color: white;
+	}
+	.moreTitle{
+		font-weight: bold;
+		font-size: 28rpx;
+		margin-bottom: 10rpx;
+	}
+	.moreItem{
+		width: 46%;
+		box-shadow:0px 0px 30rpx 0px rgba(0, 0, 0, 0.19);
+		border-radius:5rpx;
+		margin-top: 20rpx;
+	}
+	.moreView{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.moreView1{
+		width: 100%;
+		height: 180rpx;
+	}
+	.moreImg{
+		width: 100%;
+		height: 180rpx;
+	}
+	.moreView2{
+		padding: 15rpx;
+	}
+	.moreText1{
+		font-size: 24rpx;
+		margin-bottom: 15rpx;
+		
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+	.moreText2{
+		font-size: 24rpx;
+		color: #FF2626;
+		margin-bottom: 15rpx;
+	}
+	.morePrice{
+		font-size: 28rpx;
+	}
+	.moreItemBottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		font-size: 26rpx;
+		color: #999999;
+	}
+	.through{
+		text-decoration:line-through;
+	}

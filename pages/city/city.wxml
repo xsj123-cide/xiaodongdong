@@ -1,0 +1,51 @@
+
+	<!-- 导航栏 -->
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			城市选择
+		</view>
+	</daohang>
+	<!-- 内容 -->
+	<scroll-view scroll-y style="height:{{height1}}" bindscroll="scrollHandle" scroll-into-view="{{scrollId}}">
+		<!-- 定位 -->
+		<view class="dingwei">
+			<view class="iconfont iconweizhi"></view>
+			<view style="margin-left: 10px;">
+				定位城市：<text class="dingweiCity">{{indexCity.name}}</text>
+			</view>
+		</view>
+		<!-- 热门 -->
+		<view class="list" id="a">
+			<view class="title">
+				热门
+			</view>
+			<view class="remenView">
+				<view class="remenItem" wx:for="{{hotCitys}}" wx:key="index" data-city="{{item.name}}" bindtap="chooseCity">
+					{{item.name}}
+				</view>
+			</view>
+		</view>
+		<!-- 城市 -->
+		<view class="list" wx:for="{{city}}" wx:key="index" id="{{index}}">
+			<view class="title">
+				{{index}}
+			</view>
+			<view class="itemView">
+				<view class="item" wx:for="{{item}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1"
+				data-city="{{item1.name}}" bindtap="chooseCity">
+					{{ item1.name }}
+				</view>
+			</view>
+		</view>
+		
+		<!-- 右侧导航 -->
+		<view class="rightDaohang">
+			<view class="{{cityIndex=='a'?'active':''}}" style="padding: 2rpx 0;" data-id="a" bindtap="scroll1">
+				热门
+			</view>
+			<view wx:for="{{alphabet}}" wx:key="index" class="{{cityIndex==item?'active':''}}"
+			wx-if="{{index>0}}" data-id="{{item}}" bindtap="scroll1" style="padding: 2rpx 0;">
+				{{item}}
+			</view>
+		</view>
+	</scroll-view>

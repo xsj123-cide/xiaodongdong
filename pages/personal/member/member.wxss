@@ -1,0 +1,68 @@
+
+	.view{
+		width: 100%;
+		min-height: 100vh;
+		background-color: #F5F5F5;
+	}
+	.first{
+		padding: 30rpx;
+		padding-right: 0;
+		background-color: white;
+	}
+	.firstTile{
+		font-size: 26rpx;
+		margin-bottom: 20rpx;
+	}
+	.firstLeft{
+		display: flex;
+		flex-direction: row;
+		font-weight: bold;
+		position: relative;
+		margin-right: 100rpx;
+	}
+	.firstNumber{
+		font-size: 80rpx;
+	}
+	.firstPerson{
+		position: absolute;
+		right: -40rpx;
+		bottom: 20rpx;
+	}
+	.firstText{
+		text-align: center;
+		color: #999999;
+		font-size: 24rpx;
+		margin-bottom: 20rpx;
+	}
+	.firstButton{
+		padding: 0 30rpx;
+		height:62rpx;
+		font-size: 26rpx;
+		color: white;
+		background:rgba(114,200,255,1);
+		box-shadow:0px 5px 8px 1px rgba(30,100,145,0.19);
+		border-radius:31rpx;
+		margin-right: 20rpx;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.firstIcon{
+		margin-left: 5rpx;
+		font-size: 20rpx;
+	}
+	.secondTitle{
+		padding: 15rpx 30rpx;
+		font-size: 26rpx;
+	}
+	.secondItem{
+		font-size: 26rpx;
+		padding: 20rpx 30rpx;
+		background-color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		border: 1rpx solid #F5F5F5;
+	}

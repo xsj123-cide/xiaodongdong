@@ -1,0 +1,41 @@
+	
+	.marginLeft30{
+		margin-left: 30rpx;
+	}
+	.pay{
+		font-size: 28rpx;
+		text-align: center;
+		padding: 20rpx 0;
+		border-bottom: 10px solid #F5F5F5;
+	}
+	.payIcon{
+		margin-top: 50rpx;
+		font-size: 120rpx;
+		font-weight: bold;
+		color: #72C7FF;
+	}
+	.payView{
+		font-size: 32rpx;
+		font-weight: bold;
+		margin-top: 10rpx;
+	}
+	.payView1{
+		margin-top: 50rpx;
+	}
+	.payBottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 20rpx;
+		margin-bottom: 15rpx;
+	}
+	.payButton{
+		padding: 0 30rpx;
+		height:50rpx;
+		line-height: 50rpx;
+		text-align: center;
+		font-size:28rpx;
+		border-radius: 24rpx;
+		border: 1px solid #999999;
+		margin-left: 30rpx;
+	}

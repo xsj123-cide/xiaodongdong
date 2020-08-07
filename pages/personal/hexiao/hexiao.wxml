@@ -1,0 +1,78 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				确认核销
+			</view>
+		</daohang>
+		
+		<!-- first -->
+		<view class="first">
+			<view>
+				{{first.dingdan}}
+			</view>
+			<view class="firstText1">
+				订单金额
+			</view>
+			<view>
+				￥{{first.price}}
+			</view>
+		</view>
+		<!-- second -->
+		<view>
+			<view class="secondTitle">
+				<view>
+					游玩人
+				</view>
+				<view>
+					{{second.name}}
+					{{second.phone}}
+				</view>
+			</view>
+			<view class="secondInfo">
+				<image src="{{second.img1}}" class="infoImg"></image>
+				<view>
+					<view class="infoText">
+						{{second.text}}
+					</view>
+					<view class="infoText1">
+						金额：￥{{second.price}}
+					</view>
+				</view>
+				<view class="infoNumber">
+					x{{second.number}}
+				</view>
+			</view>
+			<view class="secondBottom">
+				<view class="bottomItem">
+					<view>
+						凭证码
+					</view>
+					<view>
+						{{second.yanzheng}}
+					</view>
+				</view>
+				<view class="bottomItem">
+					<view>
+						凭证码
+					</view>
+					<view class="flex">
+						<view class="add" data-type="reduce" bindtap="add1">
+							-
+						</view>
+						<view class="number">
+							{{second.number1}}
+						</view>
+						<view class="add" data-type="add" bindtap="add1">
+							+
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+		<!-- bottom -->
+		<view class="bottom" bindtap="hexiao1">
+			确认使用
+		</view>
+	</view>

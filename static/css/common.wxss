@@ -1,0 +1,30 @@
+view{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+	font-family:PingFang SC;
+}
+text{
+	letter-spacing: 1px;
+	font-family:PingFang SC;
+}
+input{
+	font-family:PingFang SC;
+}
+.daohangTitle{
+	font-weight: bold;
+	font-size: 32rpx;
+	letter-spacing: 1px;
+}
+.flex{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.weight{
+	font-weight: bold;
+}
+.through{
+	text-decoration:line-through;
+}

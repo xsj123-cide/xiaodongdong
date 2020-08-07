@@ -1,0 +1,54 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				我的会员
+			</view>
+		</daohang>
+		
+		<!-- first -->
+		<view class="first">
+			<view class="firstTile">
+				我的会员总数
+			</view>
+			<view class="flex">
+				<view class="firstLeft">
+					<view class="firstNumber">80</view>
+					<view class="firstPerson">人</view>
+				</view>
+				<view>
+					<view class="firstText">
+						分享专属海报或者小程序绑定会员
+					</view>
+					<view class="flex">
+						<view class="firstButton">
+							<view>我的小程序码</view>
+							<view class="iconfont iconyoujiantou1 firstIcon"></view>
+						</view>
+						<view class="firstButton">
+							<view>我的海报</view>
+							<view class="iconfont iconyoujiantou1 firstIcon"></view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- second -->
+		<view wx:for="{{array}}" wx:key="index">
+			<view class="secondTitle">
+				{{item.title}}
+			</view>
+			<view>
+				<view class="secondItem" wx:for="{{item.item}}" wx:key="index1" 
+				wx:for-index="index1" wx:for-item="item1">
+					<view>
+						{{item1.name}}
+					</view>
+					<view>
+						访问{{item1.number}}次
+					</view>
+				</view>
+			</view>
+		</view>
+		
+	</view>

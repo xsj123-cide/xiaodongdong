@@ -1,0 +1,130 @@
+
+	<!-- 导航栏 -->
+	<daohang isBack="true" backColor="white">
+		<view slot="center" class="daohangTitle">
+			特惠抢购
+		</view>
+	</daohang>
+	<!-- title -->
+	<view class="title">
+		<view class="titleItem {{titleIndex==0?'active':''}}" bindtap="changeIndex" data-index="{{0}}">
+			正在疯抢
+		</view>
+		<view class="titleItem {{titleIndex==1?'active':''}}" bindtap="changeIndex" data-index="{{1}}">
+			即将开始
+		</view>
+		<view class="titleItem borderRight {{titleIndex==2?'active':''}}" bindtap="changeIndex" data-index="{{2}}">
+			即将售罄
+		</view>
+	</view>
+	<!-- 正在疯抢 -->
+	<view wx:if="{{titleIndex==0}}">
+		<view class="crazy" wx:for="{{shuju.crazy}}" wx:key="index">
+			<image src="{{item.img}}" class="crazyImg"></image>
+			<view>
+				<view class="crazyText">
+					{{item.text1}}
+				</view>
+				<view class="crazySlider">
+					<view class="greySlider">
+						<view class="redSlider" style="width:{{item.precent}}%">
+						</view>
+					</view>
+					<view>
+						<text class="red">{{item.present}}</text>/{{item.total}}
+					</view>
+				</view>
+				<view class="flex">
+					<view class="red">
+						<text class="price1">￥</text><text class="number1">{{item.yuanjia}}</text>
+					</view>
+					<view class="through">
+						<text class="number2">￥</text><text class="number2">{{item.now}}</text>
+					</view>
+					<view class="crazyButton">
+						立即抢购
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="crazyBottom">
+			没有更多了喲~
+		</view>
+		
+	</view>
+	<!-- 即将开始 -->
+	<view wx:if="{{titleIndex==1}}">
+		<view class="crazy" wx:for="{{shuju.crazy}}" wx:key="index">
+			<image src="{{item.img}}" class="crazyImg"></image>
+			<view>
+				<view class="crazyText">
+					{{item.text1}}
+				</view>
+				<view class="flex">
+					<view class="red">
+						<text class="price1">￥</text><text class="number1">{{item.yuanjia}}</text>
+					</view>
+					<view class="number2">
+						<text>￥</text><text>{{item.now}}</text>
+					</view>
+				</view>
+				<view class="crazyTime">
+					<view>
+						距离结束：<text class="red">2天</text>
+					</view>
+					<view class="timeRight">
+						<view class="timeItem">
+							20
+						</view>
+						：
+						<view class="timeItem">
+							20
+						</view>
+						：
+						<view class="timeItem">
+							20
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="crazyBottom">
+			没有更多了喲~
+		</view>
+		
+	</view>
+	<!-- 即将售罄 -->
+	<view wx:if="{{titleIndex==2}}">
+		<view class="crazy" wx:for="{{shuju.crazy}}" wx:key="index">
+			<image src="{{item.img}}" class="crazyImg"></image>
+			<view>
+				<view class="crazyText">
+					{{item.text1}}
+				</view>
+				<view class="crazySlider">
+					<view class="greySlider">
+						<view class="redSlider" style="width:{{item.precent}}%">
+						</view>
+					</view>
+					<view>
+						<text class="red">{{item.present}}</text>/{{item.total}}
+					</view>
+				</view>
+				<view class="flex">
+					<view class="red">
+						<text class="price1">￥</text><text class="number1">{{item.yuanjia}}</text>
+					</view>
+					<view class="through">
+						<text class="number2">￥</text><text class="number2">{{item.now}}</text>
+					</view>
+					<view class="crazyButton">
+						立即抢购
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="crazyBottom">
+			没有更多了喲~
+		</view>
+		
+	</view>

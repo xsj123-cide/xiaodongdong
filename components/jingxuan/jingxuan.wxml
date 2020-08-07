@@ -1,0 +1,29 @@
+	<!-- 更多精选活动 -->
+	<view class="more">
+		<view class="moreTitle">
+			更多精选活动
+		</view>
+		<view class="moreView">
+			<view class="moreItem" wx:for="{{shuju}}" wx:key="index" bindtap="changeUrl" data-url="../../../pages/product/product_detail/product_detail?id={{item.id}}">
+				<view class="moreView1">
+					<image src="{{item.img}}" class="moreImg"></image>
+				</view>
+				<view class="moreView2">
+					<view class="moreText1">
+						{{item.title}}
+					</view>
+					<view class="moreText2">
+						<text class="morePrice">{{item.priceArea}}</text>
+					</view>
+					<view class="moreItemBottom">
+						<view class="through">
+							<text style="font-size: 24rpx;"></text>{{item.oldPriceArea}}
+						</view>
+						<view>
+							{{item.sales}}人购买
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>

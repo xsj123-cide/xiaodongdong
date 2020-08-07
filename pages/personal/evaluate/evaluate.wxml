@@ -1,0 +1,44 @@
+
+	<daohang isBack="true">
+		<view class="daohangTitle" slot="center">
+			悦动行
+		</view>
+	</daohang>
+	<!-- content -->
+	<view class="content" bindtap="changeUrl" data-url="../../product/product_detail/product_detail?id={{productId}}">
+		<image src="{{img}}" class="contentImg"></image>
+		<view>
+			<view class="contentText">
+				{{text}}
+			</view>
+		</view>
+	</view>
+	<view class="pingjia">
+		<view>
+			你的评价会让商家做的更好
+		</view>
+		<view class="pingfen">
+			<text class="iconfont iconpingfen pingjiaIcon {{index<=pingjiaIndex?'active':''}}" wx:for="{{5}}" wx:key="index" 
+			bindtap="pingjia1" data-index="{{index}}"></text>
+		</view>
+	</view>
+	<textarea class="textarea" placeholder="在这里写下您的体验心得，分享给更多人" bindinput="writearticle">
+		
+	</textarea>
+	<!-- img -->
+	<view class="imgArray">
+		<view class="imgButton" bindtap="addImg">
+			<view class="add">
+				+
+			</view>
+			<view>
+				最多上传9张
+			</view>
+		</view>
+		<image wx:for="{{imgArray}}" wx:key="index" src="{{item}}" class="imgItem"></image>
+		<!-- <image src="../../../static/img/lunbo1.jpg" class="imgItem"></image> -->
+	</view>
+	
+	<view class="bottom" bindtap="save">
+		提交
+	</view>

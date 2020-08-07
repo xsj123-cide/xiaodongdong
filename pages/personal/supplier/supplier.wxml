@@ -1,0 +1,36 @@
+
+	<view class="view">
+		<daohang isBack="true" backColor="white">
+			<view class="daohangTitle" slot="center">
+				供应商中心
+			</view>
+		</daohang>
+		<!-- back -->
+		<view class="back">
+			商户名称：{{name}}
+		</view>
+		<!-- first -->
+		<view class="first">
+			<view class="iconfont iconjilu firstIcon1">
+			</view>
+			<input type="text" class="firstInput" placeholder="输入核销码" />
+			<view class="hexiao" bindtap="hexiao1">
+				核销
+			</view>
+			<view class="iconfont icontubiaolunkuo- firstIcon2">
+			</view>
+			<view>
+				验证扫码
+			</view>
+		</view>
+		<!-- second -->
+		<view class="second">
+			<view class="secondItem" wx:for="{{array}}" wx:key="index" data-url="{{item.url}}" bindtap="changeUrl">
+				<view class="iconfont secondIcon {{item.icon}}"></view>
+				<view>
+					{{item.text}}
+				</view>
+			</view>
+			
+		</view>
+	</view>
