@@ -1,14 +1,20 @@
 
-	<view class="content">
+	<scroll-view  scroll-y  class="content">
 		<daohang isBack="true" backColor="white">
-			<view class="daohangTitle" slot="center">
-				申请退款
+			<view class="daohangTitle" slot="center" wx:if="{{type=='change'}}">
+				申请改期
 			</view>
+				<view class="daohangTitle" slot="center" wx:if="{{type=='tui'}}">
+				申请退款
+				</view>
 		</daohang>
 		<!-- content -->
 		<view>
 			<view>
-				<view class="contentTitle">
+				<view class="contentTitle" wx:if="{{type=='change'}}">
+					改期券码（可多选）
+				</view>
+				<view class="contentTitle" wx:if="{{type=='tui'}}">
 					退款券码（可多选）
 				</view>
 				<view class="contentView">
@@ -25,7 +31,47 @@
 					</checkbox-group>
 				</view>
 			</view>
-			<view>
+			<!-- 原定时间 -->
+			<view wx:if="{{type=='change'}}">
+						<view class="contentTitle">
+							原定时间
+						</view>
+						<view class="contentView">
+							<view class="contentItem">
+								<view>
+									原定日期
+								</view>
+								<view>
+									08.02
+								</view>
+							</view>
+						</view>
+			</view>
+			<view class="contentView" style="margin-top:15rpx;padding-bottom:0rpx" wx:if="type=='change'">
+					<view class="contentItem">
+								<view>
+									选择日期
+								</view>
+					</view>
+					<view class="contentItema" style="padding:0rpx">
+								<view class="contentItema_item {{activiindex == index? 'activemonth':''}}" wx:for="{{montharray}}" wx:key="index" bindtap="changeindex" data-index="{{index}}">
+									{{item.month}}月
+								</view>
+					</view>
+			</view>
+			<view class="contentTitlea"  style="padding:0rpx">
+						<view style="flex:1" wx:for="{{weekday}}" wx:key="index">{{item}}</view>
+			</view>
+			<view class="contentView" style="padding:0rpx">
+					<view class="contentTitlea" style="flex-wrap: wrap; padding:0rpx">
+						<view  class="daystyle {{dayactive==index?'dayactive':''}}" wx:for="{{timeArray}}" wx:key="index" bindtap="{{dayactive==index?'yuan':'changeday'}}" data-index = "{{index}}">
+								  <view>{{item.day}}</view>
+							<view wx-if="{{item.num!=undifine}}">{{item.num}}份</view> 
+						</view>
+					</view>
+			</view>
+			<!-- 退款金额 -->
+			<view wx:if="{{type=='tui'}}">
 				<view class="contentTitle">
 					退款金额
 				</view>
@@ -40,7 +86,7 @@
 					</view>
 				</view>
 			</view>
-			<view>
+			<view wx:if="{{type=='tui'}}">
 				<view class="contentTitle">
 					退款规则
 				</view>
@@ -52,7 +98,7 @@
 					</view>
 				</view>
 			</view>
-			<view>
+			<view wx:if="{{type=='tui'}}">
 				<view class="contentTitle">
 					退款原因
 				</view>
@@ -71,8 +117,11 @@
 				</view>
 			</view>
 		</view>
-	</view>
+	</scroll-view >
 	<!-- bottom -->
-	<view class="bottom" bindtap="refund1">
+	<view class="bottom" bindtap="refund1" wx:if="type ='tui'">
 		申请退款
+	</view>
+		<view class="bottom" bindtap="refund1" wx:if="type == 'change'">
+		确认改期
 	</view>

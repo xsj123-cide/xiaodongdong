@@ -68,7 +68,7 @@
 					"id": 0,
 					"name": "pages/personal/refund/refund",
 					"pathName": "pages/personal/refund/refund",
-					"query": "type=0",
+					"query": "type=change",
 					"scene": null
 				}
 			]

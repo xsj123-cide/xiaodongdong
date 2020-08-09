@@ -100,7 +100,7 @@ Page({
 	jihe1(){
 		this.setData({
 			isZhezhao:true,
-			isorderc:true
+			isJihe:true
 		})
 	},
 	cancelJihe(){

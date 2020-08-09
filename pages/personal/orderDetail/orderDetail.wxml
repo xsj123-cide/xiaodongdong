@@ -158,12 +158,14 @@
 		<view class="jiheCancel" bindtap="cancelorderc">
 			X
 		</view>
-		<view class="bottom2Button">
-				申请改期
+		<view class="chuliparen">
+			<view class="bottom2Button" bindtap="changeUrl" data-url="../../personal/refund/refund?type=change">
+					申请改期
+				</view>
+			<view class="bottom2Button" bindtap="changeUrl" data-url="../../personal/refund/refund?type=tui">
+					申请退款
 			</view>
-		<view class="bottom2Button">
-				申请退款
-		</view>
+		</view>		
 	</view>
 	
 	

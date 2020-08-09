@@ -10,6 +10,14 @@
 		font-size: 30rpx;
 		font-weight: bold;
 	}
+	.contentTitlea{
+		padding: 15rpx 0rpx;
+		font-size: 25rpx;
+		display: flex;
+		width: 100%;
+		text-align: center;
+		font-weight: normal;
+	}
 	.contentView{
 		padding: 20rpx 30rpx;
 		background-color: white;
@@ -21,6 +29,23 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 20rpx;
+	}
+
+	.contentItema {
+		display: flex;
+		/* position: relative; */
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		overflow-x: scroll;
+		margin-bottom: 20rpx;
+	}
+	.contentItema_item {
+		text-align: center;
+		width: 16.66%;
+		font-weight: 500;
+		position: relative;
+		height: 48rpx;
 	}
 	.contentYuan{
 		width: 40rpx;
@@ -51,4 +76,27 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
+	}
+	.dayactive {
+		background: rgb(192, 221, 255);
+	}
+	.daystyle {
+		width: 14.28%;
+		height: 80rpx;	
+		padding:10rpx;
+		border:solid 1rpx rgb(221, 221, 221);
+		display: flex;
+		flex-direction: column;
+		align-items: center;	
+		color: gray;
+	}
+	.activemonth {}
+	.activemonth::after {
+		content: "";
+		width: 30rpx;
+		border: 1px solid #71C7FF;
+		position: absolute;
+		bottom: 5rpx;
+		left: 50%;
+		transform: translateX(-50%);
 	}
